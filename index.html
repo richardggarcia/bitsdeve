@@ -325,7 +325,7 @@
                     </p>
                     <ul class="text-gray-300 space-y-4 text-lg text-center">
                         <li><i class="fas fa-map-marker-alt text-cyan-400 w-6"></i> <strong>Ubicaciones:</strong> Chile, Buenos Aires y Venezuela</li>
-                        <li><i class="fas fa-envelope text-cyan-400 w-6"></i> <strong>Email:</strong> <a href="mailto:contact@bitsdeve.com" class="text-cyan-400 hover:text-cyan-300 hover:underline">contact@bitsdeve.com</a></li>
+                        <li><i class="fas fa-envelope text-cyan-400 w-6"></i> <strong>Email:</strong> <a href="mailto:contacto@bitsdeve.com" class="text-cyan-400 hover:text-cyan-300 hover:underline">contacto@bitsdeve.com</a></li>
                     </ul>
                 </div>
             </div>
@@ -561,6 +561,10 @@
     </footer>
 
     <script>
+        // ============================================
+        // JAVASCRIPT CORREGIDO PARA BITSDEVE.COM
+        // ============================================
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -639,52 +643,121 @@
         // Generate particles periodically
         setInterval(createParticle, 2000);
 
-        // Enhanced form handling
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
+        // ============================================
+        // NUEVA FUNCIÓN PARA MANEJAR EL FORMULARIO
+        // Usa Resend API en lugar de mailto
+        // ============================================
+
+        async function handleFormSubmit(event) {
+            event.preventDefault();
             
-            const formData = new FormData(this);
+            const form = event.target;
+            const formData = new FormData(form);
+            
             const name = formData.get('name');
             const email = formData.get('email');
             const message = formData.get('message');
             
-            // Create enhanced email content
-            const subject = `Nuevo proyecto de ${name} - bitsdeve`;
-            const body = `Hola Richard,
-
-Mi nombre es ${name} y estoy interesado en trabajar contigo.
-
-DETALLES DEL PROYECTO:
-${message}
-
-INFORMACIÓN DE CONTACTO:
-Email: ${email}
-
-¡Espero tu respuesta para comenzar este proyecto juntos!
-
-Saludos,
-${name}`;
+            // Validación básica
+            if (!name || !email || !message) {
+                alert('Por favor completa todos los campos');
+                return;
+            }
             
-            const mailtoLink = `mailto:contact@bitsdeve.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            const submitButton = form.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
             
-            // Enhanced success feedback
-            const button = this.querySelector('button[type="submit"]');
-            const originalText = button.textContent;
+            // Estado de loading
+            submitButton.textContent = 'ENVIANDO...';
+            submitButton.disabled = true;
+            submitButton.classList.add('pulse-cyan');
             
-            button.textContent = 'ENVIANDO...';
-            button.classList.add('pulse-cyan');
+            try {
+                // Enviar email usando Resend API
+                const response = await fetch('/api/send-email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        name: name,
+                        email: email,
+                        message: message
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok) {
+                    // Éxito: mostrar modal y resetear formulario
+                    showSuccessModal();
+                    form.reset();
+                    
+                    // Resetear botón después de un delay
+                    setTimeout(() => {
+                        submitButton.textContent = originalText;
+                        submitButton.disabled = false;
+                        submitButton.classList.remove('pulse-cyan');
+                    }, 2000);
+                    
+                } else {
+                    // Error del servidor
+                    throw new Error(result.error || 'Error al enviar el mensaje');
+                }
+                
+            } catch (error) {
+                console.error('Error:', error);
+                
+                // Mostrar error al usuario
+                alert('Hubo un error al enviar tu mensaje. Por favor intenta nuevamente o contáctanos directamente por WhatsApp.');
+                
+                // Resetear botón
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+                submitButton.classList.remove('pulse-cyan');
+            }
+        }
+
+        // ============================================
+        // FUNCIONES PARA EL MODAL DE ÉXITO
+        // ============================================
+
+        function showSuccessModal() {
+            const modal = document.getElementById('success-modal');
+            const modalContent = modal.querySelector('.glass-card');
+            
+            modal.classList.remove('hidden');
+            
+            // Animar la entrada del modal
+            setTimeout(() => {
+                modalContent.classList.remove('scale-95');
+                modalContent.classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeSuccessModal() {
+            const modal = document.getElementById('success-modal');
+            const modalContent = modal.querySelector('.glass-card');
+            
+            // Animar la salida del modal
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
             
             setTimeout(() => {
-                window.location.href = mailtoLink;
-                button.textContent = '¡MENSAJE ENVIADO!';
-                
-                setTimeout(() => {
-                    button.textContent = originalText;
-                    button.classList.remove('pulse-cyan');
-                    this.reset();
-                }, 3000);
-            }, 1000);
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        // Cerrar modal al hacer click fuera de él
+        document.getElementById('success-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeSuccessModal();
+            }
         });
+
+        // ============================================
+        // EFECTOS ADICIONALES
+        // ============================================
 
         // Parallax effect for hero background
         window.addEventListener('scroll', () => {
@@ -693,6 +766,21 @@ ${name}`;
             if (particles) {
                 particles.style.transform = `translateY(${scrolled * 0.3}px)`;
             }
+        });
+
+        // Enhanced form validation
+        document.querySelectorAll('input, textarea').forEach(input => {
+            input.addEventListener('blur', function() {
+                if (this.value.trim() === '' && this.hasAttribute('required')) {
+                    this.style.borderColor = '#ef4444';
+                } else {
+                    this.style.borderColor = '#00FFFF';
+                }
+            });
+            
+            input.addEventListener('focus', function() {
+                this.style.borderColor = '#00FFFF';
+            });
         });
     </script>
 </body>
