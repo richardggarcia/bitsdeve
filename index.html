@@ -1,14 +1,21 @@
+I can help you unify the code. However, the JavaScript modification you provided assumes the presence of a class `contact-form` on your `<form>` element, which is not present in your base code. Also, it's making a `fetch` request to `/api/send-email`, which implies you have a backend endpoint set up to handle email sending. The original code used a `mailto:` link.
+
+Please be aware that for the modified code to function correctly, you will need to:
+
+1.  Add the class `contact-form` to your `<form>` tag.
+2.  Set up a backend API endpoint at `/api/send-email` that can receive `POST` requests with `name`, `email`, and `message` and handle sending emails.
+
+Here's the unified code with the assumption that you will make these necessary changes:
+
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>bitsdeve | Soluciones Web con IA </title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Orbitron + Space Grotesk -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Custom CSS Variables */
@@ -213,7 +220,6 @@
 </head>
 <body class="font-space">
 
-    <!-- Header Section -->
     <header class="glass fixed w-full z-50 py-4 px-6 md:px-12">
         <nav class="container mx-auto flex justify-between items-center">
             <a href="#hero" class="text-2xl font-bold font-orbitron text-gradient hover:scale-110 transition-transform duration-300 p-2">
@@ -225,14 +231,12 @@
                 <a href="#proyectos" class="text-gray-300 hover:text-cyan-400 transition-colors duration-300 font-medium p-2">Proyectos</a>
                 <a href="#contacto" class="text-gray-300 hover:text-cyan-400 transition-colors duration-300 font-medium p-2">Contacto</a>
             </div>
-            <!-- Mobile Menu Button -->
             <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-lg p-2">
                 <i class="fas fa-bars text-xl"></i>
             </button>
         </nav>
     </header>
 
-    <!-- Mobile Menu Overlay -->
     <div id="mobile-menu" class="fixed inset-0 glass z-40 hidden flex flex-col items-center justify-center space-y-8 md:hidden">
         <button id="close-mobile-menu-button" class="absolute top-6 right-6 text-gray-300 hover:text-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-lg p-2">
             <i class="fas fa-times text-2xl"></i>
@@ -243,9 +247,7 @@
         <a href="#contacto" class="text-gray-300 text-3xl hover:text-cyan-400 transition-colors duration-300 font-medium font-orbitron p-4" onclick="toggleMobileMenu()">Contacto</a>
     </div>
 
-    <!-- Hero Section -->
     <section id="hero" class="relative animated-gradient h-screen flex items-center justify-center text-center p-6 md:p-12 overflow-hidden">
-        <!-- Particle Background -->
         <div class="particles">
             <div class="particle"></div>
             <div class="particle"></div>
@@ -274,14 +276,12 @@
         </div>
     </section>
 
-    <!-- About Us Section -->
     <section id="sobre-nosotros" class="py-16 md:py-24 px-6 mx-4 my-8">
         <div class="container mx-auto max-w-5xl">
             <h2 class="text-3xl md:text-4xl font-extrabold font-orbitron text-gradient text-center mb-12">
                 <i class="fas fa-building text-cyan-400 mr-3"></i> Sobre bitsdeve
             </h2>
             <div class="grid md:grid-cols-2 gap-12 items-start">
-                <!-- Our Mission/Vision Card -->
                 <div class="glass-card p-8 rounded-2xl glow-cyan-hover hover-lift text-center">
                     <h3 class="text-2xl font-bold font-orbitron text-cyan-400 mb-6 flex items-center justify-center">
                         <i class="fas fa-lightbulb text-cyan-400 mr-3"></i> Nuestra Filosofía
@@ -303,7 +303,6 @@
                     </ul>
                 </div>
 
-                <!-- Meet Richard Garcia Card -->
                 <div class="glass-card p-8 rounded-2xl glow-cyan-hover hover-lift text-center">
                     <h3 class="text-2xl font-bold font-orbitron text-cyan-400 mb-6 flex items-center justify-center">
                         <i class="fas fa-users text-cyan-400 mr-3"></i> Conoce al Equipo de bitsdeve
@@ -316,14 +315,13 @@
                     </p>
                     <ul class="text-gray-300 space-y-4 text-lg text-center">
                         <li><i class="fas fa-map-marker-alt text-cyan-400 w-6"></i> <strong>Ubicaciones:</strong> Chile, Buenos Aires y Venezuela</li>
-                        <li><i class="fas fa-envelope text-cyan-400 w-6"></i> <strong>Email:</strong> <a href="mailto:contact@bitsdeve.com" class="text-cyan-400 hover:text-cyan-300 hover:underline">contact@bitsdeve.com</a></li>
+                        <li><i class="fas fa-envelope text-cyan-400 w-6"></i> <strong>Email:</strong> <a href="mailto:contacto@bitsdeve.com" class="text-cyan-400 hover:text-cyan-300 hover:underline">contacto@bitsdeve.com</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Tech Stack Section -->
     <section id="stack" class="py-16 md:py-24 px-6 mx-4 my-8">
         <div class="container mx-auto max-w-6xl">
             <h2 class="text-3xl md:text-4xl font-extrabold font-orbitron text-gradient text-center mb-12">
@@ -331,7 +329,6 @@
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                <!-- Frontend & Diseño -->
                 <div class="glass-card p-8 rounded-2xl card-hover text-center">
                     <h3 class="text-2xl font-bold font-orbitron text-green-400 mb-4 flex items-center justify-center">
                         <i class="fas fa-brush text-green-400 mr-3"></i> Frontend & UI/UX
@@ -345,7 +342,6 @@
                     </ul>
                 </div>
 
-                <!-- Backend -->
                 <div class="glass-card p-8 rounded-2xl card-hover text-center">
                     <h3 class="text-2xl font-bold font-orbitron text-purple-400 mb-4 flex items-center justify-center">
                         <i class="fas fa-server text-purple-400 mr-3"></i> Backend Development
@@ -358,7 +354,6 @@
                     </ul>
                 </div>
 
-                <!-- Databases -->
                 <div class="glass-card p-8 rounded-2xl card-hover text-center">
                     <h3 class="text-2xl font-bold font-orbitron text-yellow-400 mb-4 flex items-center justify-center">
                         <i class="fas fa-database text-yellow-400 mr-3"></i> Bases de Datos
@@ -370,7 +365,6 @@
                     </ul>
                 </div>
 
-                <!-- DevOps & Deploy -->
                 <div class="glass-card p-8 rounded-2xl card-hover text-center">
                     <h3 class="text-2xl font-bold font-orbitron text-red-400 mb-4 flex items-center justify-center">
                         <i class="fas fa-cloud-upload-alt text-red-400 mr-3"></i> DevOps & Deploy
@@ -383,7 +377,6 @@
                     </ul>
                 </div>
 
-                <!-- Automation & AI -->
                 <div class="glass-card p-8 rounded-2xl card-hover text-center">
                     <h3 class="text-2xl font-bold font-orbitron text-cyan-400 mb-4 flex items-center justify-center">
                         <i class="fas fa-robot text-cyan-400 mr-3"></i> Automatización & IA
@@ -396,7 +389,6 @@
                     </ul>
                 </div>
 
-                <!-- APIs & Data -->
                 <div class="glass-card p-8 rounded-2xl card-hover text-center">
                     <h3 class="text-2xl font-bold font-orbitron text-indigo-400 mb-4 flex items-center justify-center">
                         <i class="fas fa-exchange-alt text-indigo-400 mr-3"></i> APIs & Datos
@@ -413,7 +405,6 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="proyectos" class="py-16 md:py-24 px-6 mx-4 my-8">
         <div class="container mx-auto max-w-6xl">
             <h2 class="text-3xl md:text-4xl font-extrabold font-orbitron text-gradient text-center mb-12">
@@ -421,7 +412,6 @@
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                <!-- Project 1: FactTech.io -->
                 <div class="glass-card p-6 rounded-2xl card-hover flex flex-col">
                     <img src="https://placehold.co/400x250/111111/00FFFF?text=FactTech.io+ERP" alt="FactTech.io Sistema de Facturación" class="w-full h-auto rounded-xl mb-6 glow-cyan">
                     <h3 class="text-2xl font-bold font-orbitron text-cyan-400 mb-3 text-center">FactTech.io</h3>
@@ -436,7 +426,6 @@
                     </a>
                 </div>
 
-                <!-- Project 2: LazosDeVida.com -->
                 <div class="glass-card p-6 rounded-2xl card-hover flex flex-col">
                     <img src="https://placehold.co/400x250/111111/00FFFF?text=LazosDeVida+QR" alt="LazosDeVida Memoriales QR" class="w-full h-auto rounded-xl mb-6 glow-cyan">
                     <h3 class="text-2xl font-bold font-orbitron text-cyan-400 mb-3 text-center">LazosDeVida.com</h3>
@@ -451,7 +440,6 @@
                     </a>
                 </div>
 
-                <!-- Project 3: Bot Predictivo -->
                 <div class="glass-card p-6 rounded-2xl card-hover flex flex-col">
                     <img src="https://placehold.co/400x250/111111/00FFFF?text=Bot+IA+Predictivo" alt="Bot Predictivo de IA" class="w-full h-auto rounded-xl mb-6 glow-cyan">
                     <h3 class="text-2xl font-bold font-orbitron text-cyan-400 mb-3 text-center">Bot Predictivo IA</h3>
@@ -470,7 +458,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contacto" class="py-16 md:py-24 px-6 mx-4 my-8">
         <div class="container mx-auto max-w-4xl text-center">
             <h2 class="text-3xl md:text-4xl font-extrabold font-orbitron text-gradient mb-12">
@@ -480,7 +467,7 @@
                 ¿Listo para transformar tu negocio con una solución web inteligente y automatizada? ¡Hablemos!
             </p>
             <div class="glass-card p-8 rounded-2xl glow-cyan">
-                <form action="#" method="POST" class="space-y-6">
+                <form action="#" method="POST" class="space-y-6 contact-form">
                     <div>
                         <label for="name" class="block text-cyan-300 text-lg font-medium mb-2 text-left font-orbitron">Nombre Completo</label>
                         <input type="text" id="name" name="name" required
@@ -505,7 +492,7 @@
                 </form>
                 <div class="mt-8 text-center text-lg text-gray-400">
                     O envíanos un correo directamente a: <br>
-                    <a href="mailto:contact@bitsdeve.com" class="text-cyan-400 hover:text-cyan-300 hover:underline font-semibold">contact@bitsdeve.com</a>
+                    <a href="mailto:contacto@bitsdeve.com" class="text-cyan-400 hover:text-cyan-300 hover:underline font-semibold">contacto@bitsdeve.com</a>
                 </div>
                 <div class="mt-8 flex justify-center space-x-6 text-3xl">
                     <a href="https://github.com/richardggarcia" target="_blank" class="text-gray-400 hover:text-cyan-400 transition-colors duration-300 rounded-full p-2 hover:scale-110">
@@ -522,7 +509,6 @@
         </div>
     </section>
 
-    <!-- Footer Section -->
     <footer class="glass py-8 px-6 text-center text-gray-400">
         <div class="container mx-auto">
             <p class="font-orbitron">&copy; 2024 <span class="text-gradient">bitsdeve</span>. Todos los derechos reservados.</p>
@@ -609,53 +595,6 @@
         // Generate particles periodically
         setInterval(createParticle, 2000);
 
-        // Enhanced form handling
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(this);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const message = formData.get('message');
-            
-            // Create enhanced email content
-            const subject = `Nuevo proyecto de ${name} - bitsdeve`;
-            const body = `Hola Richard,
-
-Mi nombre es ${name} y estoy interesado en trabajar contigo.
-
-DETALLES DEL PROYECTO:
-${message}
-
-INFORMACIÓN DE CONTACTO:
-Email: ${email}
-
-¡Espero tu respuesta para comenzar este proyecto juntos!
-
-Saludos,
-${name}`;
-            
-            const mailtoLink = `mailto:contact@bitsdeve.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            
-            // Enhanced success feedback
-            const button = this.querySelector('button[type="submit"]');
-            const originalText = button.textContent;
-            
-            button.textContent = 'ENVIANDO...';
-            button.classList.add('pulse-cyan');
-            
-            setTimeout(() => {
-                window.location.href = mailtoLink;
-                button.textContent = '¡MENSAJE ENVIADO!';
-                
-                setTimeout(() => {
-                    button.textContent = originalText;
-                    button.classList.remove('pulse-cyan');
-                    this.reset();
-                }, 3000);
-            }, 1000);
-        });
-
         // Parallax effect for hero background
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
@@ -663,6 +602,64 @@ ${name}`;
             if (particles) {
                 particles.style.transform = `translateY(${scrolled * 0.3}px)`;
             }
+        });
+
+        // Manejo del formulario
+        document.querySelector('.contact-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const message = formData.get('message');
+            const button = this.querySelector('button[type="submit"]');
+            const originalText = button.textContent;
+
+            // Cambiar estado del botón
+            button.textContent = 'ENVIANDO...';
+            button.disabled = true;
+            button.style.background = 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)';
+
+            try {
+                const response = await fetch('/api/send-email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ name, email, message })
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    // Éxito
+                    button.textContent = '¡MENSAJE ENVIADO! ✅';
+                    button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+                    this.reset();
+
+                    // Notificación de éxito
+                    setTimeout(() => {
+                        alert(`¡Gracias ${name}! Tu mensaje ha sido enviado correctamente. Te contactaremos pronto por WhatsApp o email.`);
+                    }, 500);
+
+                } else {
+                    throw new Error(result.error || 'Error al enviar el mensaje');
+                }
+
+            } catch (error) {
+                // Error
+                console.error('Error sending email:', error);
+                button.textContent = 'ERROR - INTENTA DE NUEVO ❌';
+                button.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+
+                alert('Hubo un error al enviar tu mensaje. Por favor intenta de nuevo o contáctanos por WhatsApp.');
+            }
+
+            // Restaurar botón después de 4 segundos
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.disabled = false;
+                button.style.background = '';
+            }, 4000);
         });
     </script>
 </body>
