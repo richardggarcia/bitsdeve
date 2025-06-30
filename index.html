@@ -209,6 +209,15 @@
         @media (max-width: 768px) {
             .particle { display: none; }
         }
+
+        /* Modal animations */
+        .scale-95 {
+            transform: scale(0.95);
+        }
+        
+        .scale-100 {
+            transform: scale(1);
+        }
     </style>
 </head>
 <body class="font-space">
@@ -505,7 +514,7 @@
                 </form>
                 <div class="mt-8 text-center text-lg text-gray-400">
                     O envíanos un correo directamente a: <br>
-                    <a href="mailto:contact@bitsdeve.com" class="text-cyan-400 hover:text-cyan-300 hover:underline font-semibold">contact@bitsdeve.com</a>
+                    <a href="mailto:contacto@bitsdeve.com" class="text-cyan-400 hover:text-cyan-300 hover:underline font-semibold">contacto@bitsdeve.com</a>
                 </div>
                 <div class="mt-8 flex justify-center space-x-6 text-3xl">
                     <a href="https://github.com/richardggarcia" target="_blank" class="text-gray-400 hover:text-cyan-400 transition-colors duration-300 rounded-full p-2 hover:scale-110">
@@ -521,6 +530,27 @@
             </div>
         </div>
     </section>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="glass-card max-w-md w-full p-8 rounded-2xl glow-cyan text-center transform transition-all duration-300 scale-95">
+            <div class="text-6xl mb-4">✅</div>
+            <h3 class="text-2xl font-bold font-orbitron text-cyan-400 mb-4">¡Mensaje Enviado!</h3>
+            <p class="text-gray-300 mb-6">
+                Gracias por contactarnos. Hemos recibido tu mensaje y te responderemos pronto.
+            </p>
+            <div class="mb-6 p-4 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-lg border border-cyan-400/20">
+                <p class="text-cyan-300 font-semibold mb-2">Para una respuesta más rápida:</p>
+                <a href="https://wa.me/5491122517795?text=Hola%2C%20envié%20un%20mensaje%20desde%20bitsdeve.com" 
+                   class="inline-flex items-center text-green-400 hover:text-green-300 font-semibold">
+                   📱 Escríbenos por WhatsApp
+                </a>
+            </div>
+            <button onclick="closeSuccessModal()" class="btn-cyber text-white font-bold py-3 px-6 rounded-full font-orbitron">
+                PERFECTO
+            </button>
+        </div>
+    </div>
 
     <!-- Footer Section -->
     <footer class="glass py-8 px-6 text-center text-gray-400">
