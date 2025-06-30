@@ -489,7 +489,7 @@
                 ¿Listo para transformar tu negocio con una solución web inteligente y automatizada? ¡Hablemos!
             </p>
             <div class="glass-card p-8 rounded-2xl glow-cyan">
-                <form action="#" method="POST" class="space-y-6">
+                <form class="contact-form space-y-6" onsubmit="handleFormSubmit(event)">
                     <div>
                         <label for="name" class="block text-cyan-300 text-lg font-medium mb-2 text-left font-orbitron">Nombre Completo</label>
                         <input type="text" id="name" name="name" required
@@ -508,7 +508,7 @@
                                   class="w-full p-4 glass rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-400 placeholder-gray-400 text-lg"
                                   placeholder="Describe tu proyecto o consulta aquí..."></textarea>
                     </div>
-                    <button type="submit" class="w-full btn-cyber text-white font-bold py-4 px-8 rounded-full font-orbitron text-xl tracking-wider">
+                    <button type="submit" id="submit-btn" class="w-full btn-cyber text-white font-bold py-4 px-8 rounded-full font-orbitron text-xl tracking-wider">
                         ENVIAR MENSAJE
                     </button>
                 </form>

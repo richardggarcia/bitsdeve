@@ -1,7 +1,7 @@
 export default async function handler(req, res) {
-  // Permitir CORS para tu dominio
-  res.setHeader('Access-Control-Allow-Origin', 'https://bitsdeve.com');
-  res.setHeader('Access-Control-Allow-Methods', 'POST');
+  // CORS headers
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
   if (req.method === 'OPTIONS') {
@@ -13,7 +13,14 @@ export default async function handler(req, res) {
     return res.status(405).json({ message: 'Method not allowed' });
   }
 
+  console.log('🔑 API Key exists:', !!process.env.RESEND_API_KEY);
+  console.log('📝 Request body:', req.body);
+
   const { name, email, message } = req.body;
+
+  if (!name || !email || !message) {
+    return res.status(400).json({ error: 'Missing required fields' });
+  }
 
   try {
     const response = await fetch('https://api.resend.com/emails', {
@@ -27,32 +34,26 @@ export default async function handler(req, res) {
         to: 'richardgg646@gmail.com',
         subject: `🚀 Nuevo proyecto de ${name} - bitsdeve.com`,
         html: `
-          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
-            <h2 style="color: #00FFFF;">Nuevo contacto desde bitsdeve.com</h2>
-            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 20px 0;">
-              <p><strong>👤 Nombre:</strong> ${name}</p>
-              <p><strong>📧 Email:</strong> ${email}</p>
-              <p><strong>💬 Mensaje:</strong></p>
-              <div style="background: white; padding: 15px; border-radius: 5px; margin-top: 10px;">
-                ${message.replace(/\n/g, '<br>')}
-              </div>
-            </div>
-            <p style="color: #666; font-size: 14px;">Enviado desde el formulario de contacto de bitsdeve.com</p>
-          </div>
+          <h2>Nuevo contacto desde bitsdeve.com</h2>
+          <p><strong>Nombre:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Mensaje:</strong></p>
+          <p>${message.replace(/\n/g, '<br>')}</p>
         `,
         reply_to: email
       })
     });
 
+    const result = await response.text();
+    console.log('📧 Resend response:', response.status, result);
+
     if (response.ok) {
-      res.status(200).json({ success: true, message: 'Email enviado correctamente' });
+      res.status(200).json({ success: true });
     } else {
-      const errorData = await response.text();
-      console.error('Resend error:', errorData);
-      res.status(500).json({ error: 'Error sending email' });
+      res.status(500).json({ error: `Resend error: ${result}` });
     }
   } catch (error) {
-    console.error('Function error:', error);
+    console.error('💥 Function error:', error);
     res.status(500).json({ error: error.message });
   }
 }
