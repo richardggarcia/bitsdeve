@@ -18,6 +18,7 @@
     <style>
         :root {
             --primary-cyan: #00FFFF;
+            --verde-agua: #20B2AA;
             --secondary-blue: #0080FF;
             --accent-purple: #8000FF;
             --dark-bg: #0A0A0A;
@@ -36,7 +37,7 @@
         }
 
         .glass {
-            background: rgba(17, 17, 17, 0.3);
+            background: linear-gradient(135deg, var(--primary-cyan) 0%, var(--verde-agua) 100%);
             backdrop-filter: blur(15px);
             border: 1px solid rgba(0, 255, 255, 0.2);
         }
@@ -48,20 +49,20 @@
         }
 
         .text-gradient {
-            background: linear-gradient(45deg, var(--primary-cyan), var(--accent-purple));
+            background: linear-gradient(45deg, var(--primary-cyan), var(--verde-agua));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
         .btn-cyber {
-            background: linear-gradient(45deg, var(--primary-cyan), var(--secondary-blue));
+            background: linear-gradient(45deg, var(--primary-cyan), var(--verde-agua));
             border: 2px solid var(--primary-cyan);
             transition: all 0.3s ease;
         }
 
         .btn-cyber:hover {
-            background: linear-gradient(45deg, var(--secondary-blue), var(--accent-purple));
+            background: linear-gradient(45deg, var(--verde-agua), var(--primary-cyan));
             box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
             transform: scale(1.05);
         }
@@ -76,15 +77,8 @@
         }
 
         .animated-gradient {
-            background: linear-gradient(45deg, var(--primary-cyan), var(--accent-purple), var(--secondary-blue));
-            background-size: 300% 300%;
-            animation: gradientShift 3s ease infinite;
-        }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            background: linear-gradient(45deg, var(--dark-bg), var(--primary-cyan), var(--verde-agua));
+            /* Eliminamos la animación mareante */
         }
     </style>
 </head>
