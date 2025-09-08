@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Términos de Servicio | bitsdeve</title>
+    <meta name="description" content="Términos y condiciones de uso de los servicios de bitsdeve - Desarrollo Web con IA">
+    <link rel="canonical" href="https://bitsdeve.com/terminos-de-servicio">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Orbitron + Space Grotesk -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* Usar los mismos estilos del index.html */
+        :root {
+            --primary-cyan: #00FFFF;
+            --secondary-blue: #0080FF;
+            --accent-purple: #8000FF;
+            --dark-bg: #0A0A0A;
+            --card-bg: #111111;
+            --text-primary: #FFFFFF;
+            --text-secondary: #CCCCCC;
+        }
+
+        .font-orbitron { font-family: 'Orbitron', monospace; }
+        .font-space { font-family: 'Space Grotesk', sans-serif; }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+        }
+
+        .glass {
+            background: rgba(17, 17, 17, 0.3);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+        }
+
+        .glass-card {
+            background: rgba(17, 17, 17, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 255, 255, 0.15);
+        }
+
+        .text-gradient {
+            background: linear-gradient(45deg, var(--primary-cyan), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .btn-cyber {
+            background: linear-gradient(45deg, var(--primary-cyan), var(--secondary-blue));
+            border: 2px solid var(--primary-cyan);
+            transition: all 0.3s ease;
+        }
+
+        .btn-cyber:hover {
+            background: linear-gradient(45deg, var(--secondary-blue), var(--accent-purple));
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="font-space">
+
+    <!-- Header -->
+    <header class="glass fixed w-full z-50 py-4 px-6 md:px-12">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold font-orbitron text-gradient hover:scale-110 transition-transform duration-300 p-2">
+                bitsdeve
+            </a>
+            <div class="flex space-x-6">
+                <a href="/" class="text-gray-300 hover:text-cyan-400 transition-colors duration-300 font-medium p-2">Inicio</a>
+                <a href="/#contacto" class="text-gray-300 hover:text-cyan-400 transition-colors duration-300 font-medium p-2">Contacto</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-24 pb-16 px-6">
+        <div class="container mx-auto max-w-4xl">
+            <div class="glass-card p-8 md:p-12 rounded-3xl">
+                <h1 class="text-3xl md:text-4xl font-extrabold font-orbitron text-gradient text-center mb-8">
+                    <i class="fas fa-file-contract text-cyan-400 mr-3"></i>
+                    Términos de Servicio
+                </h1>
+                
+                <div class="text-gray-300 text-lg leading-relaxed space-y-6">
+                    <p class="text-center text-gray-400 mb-8">
+                        <strong>Última actualización:</strong> Septiembre 2024
+                    </p>
+
+                    <section>
+                        <h2 class="text-2xl font-bold text-cyan-400 mb-4 font-orbitron">1. Introducción</h2>
+                        <p>
+                            Bienvenido a bitsdeve. Estos términos de servicio ("Términos") rigen el uso de nuestros servicios de desarrollo web, automatización con IA, y soluciones tecnológicas ("Servicios") proporcionados por bitsdeve ("nosotros", "nuestro" o "la empresa").
+                        </p>
+                        <p>
+                            Al contratar nuestros servicios, usted ("Cliente" o "usted") acepta estar sujeto a estos Términos. Si no está de acuerdo con alguna parte de estos términos, no debe utilizar nuestros servicios.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-bold text-cyan-400 mb-4 font-orbitron">2. Servicios Ofrecidos</h2>
+                        <p>bitsdeve ofrece los siguientes servicios:</p>
+                        <ul class="list-disc pl-6 space-y-2 mt-3">
+                            <li>Desarrollo de aplicaciones web (React, Node.js, MongoDB)</li>
+                            <li>Sistemas ERP/CRM personalizados</li>
+                            <li>Automatización con Inteligencia Artificial</li>
+                            <li>Desarrollo de bots (WhatsApp, Telegram)</li>
+                            <li>Integración de APIs y servicios externos</li>
+                            <li>Consultoría técnica y arquitectura de software</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-bold text-cyan-400 mb-4 font-orbitron">3. Servicios de WhatsApp Business</h2>
+                        <p>
+                            Ofrecemos servicios especializados de desarrollo de bots y automatización para WhatsApp Business utilizando la API oficial de Meta. Estos servicios incluyen:
+                        </p>
+                        <ul class="list-disc pl-6 space-y-2 mt-3">
+                            <li>Desarrollo de bots conversacionales para atención al cliente</li>
+                            <li>Automatización de respuestas y workflows de ventas</li>
+                            <li>Integración con sistemas CRM y bases de datos</li>
+                            <li>Configuración de WhatsApp Business API a través de proveedores certificados</li>
+                            <li>Cumplimiento de políticas de WhatsApp Business y Meta</li>
+                        </ul>
+                        <p class="mt-3">
+                            <strong>Importante:</strong> Todos nuestros desarrollos para WhatsApp Business cumplen estrictamente con las políticas de uso de Meta y WhatsApp Business API.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-bold text-cyan-400 mb-4 font-orbitron">4. Obligaciones del Cliente</h2>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li>Proporcionar información precisa y completa necesaria para el desarrollo</li>
+                            <li>Colaborar en las etapas de testing y revisión del proyecto</li>
+                            <li>Cumplir con los plazos de pago establecidos</li>
+                            <li>Respetar las políticas de terceros (WhatsApp, Meta, etc.) en el uso de las soluciones desarrolladas</li>
+                            <li>No utilizar nuestros servicios para actividades ilegales o no autorizadas</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-bold text-cyan-400 mb-4 font-orbitron">5. Propiedad Intelectual</h2>
+                        <p>
+                            El código fuente desarrollado específicamente para el cliente se entrega como propiedad del mismo una vez completado el pago. Sin embargo, bitsdeve retiene los derechos sobre:
+                        </p>
+                        <ul class="list-disc pl-6 space-y-2 mt-3">
+                            <li>Metodologías y frameworks propietarios</li>
+                            <li>Herramientas y bibliotecas reutilizables</li>
+                            <li>Conocimientos técnicos y experiencia adquirida</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-bold text-cyan-400 mb-4 font-orbitron">6. Limitación de Responsabilidad</h2>
+                        <p>
+                            bitsdeve no será responsable por daños indirectos, incidentales o consecuenciales que surjan del uso de nuestros servicios. Nuestra responsabilidad total no excederá el monto total pagado por el cliente por los servicios específicos.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-bold text-cyan-400 mb-4 font-orbitron">7. Política de Privacidad</h2>
+                        <p>
+                            El tratamiento de datos personales se rige por nuestra <a href="/politica-de-privacidad" class="text-cyan-400 hover:text-cyan-300 underline">Política de Privacidad</a>, que forma parte integral de estos términos.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-bold text-cyan-400 mb-4 font-orbitron">8. Modificaciones</h2>
+                        <p>
+                            Nos reservamos el derecho de modificar estos términos en cualquier momento. Las modificaciones entrarán en vigor inmediatamente después de su publicación en nuestro sitio web.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 class="text-2xl font-bold text-cyan-400 mb-4 font-orbitron">9. Contacto</h2>
+                        <p>
+                            Para cualquier consulta sobre estos términos, puede contactarnos en:
+                        </p>
+                        <div class="mt-3 p-4 glass rounded-lg">
+                            <p><strong>Email:</strong> <a href="mailto:contacto@bitsdeve.com" class="text-cyan-400 hover:text-cyan-300">contacto@bitsdeve.com</a></p>
+                            <p><strong>WhatsApp:</strong> <a href="https://wa.me/5491122517795" class="text-cyan-400 hover:text-cyan-300">+54 9 11 2251-7795</a></p>
+                            <p><strong>Sitio web:</strong> <a href="https://bitsdeve.com" class="text-cyan-400 hover:text-cyan-300">https://bitsdeve.com</a></p>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="mt-12 text-center">
+                    <a href="/" class="btn-cyber text-white font-bold py-3 px-6 rounded-full font-orbitron">
+                        VOLVER AL INICIO
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass py-8 px-6 text-center text-gray-400">
+        <div class="container mx-auto">
+            <p class="font-orbitron">&copy; 2024 <span class="text-gradient">bitsdeve</span>. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

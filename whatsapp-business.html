@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Business Automation | bitsdeve</title>
+    <meta name="description" content="Servicios de automatización de WhatsApp Business con IA. Bots conversacionales, atención al cliente 24/7 y automatización de ventas con API oficial de Meta.">
+    <meta name="keywords" content="WhatsApp Business, bot WhatsApp, automatización, API oficial Meta, atención al cliente, ventas automatizadas">
+    <link rel="canonical" href="https://bitsdeve.com/whatsapp-business">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Orbitron + Space Grotesk -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-cyan: #00FFFF;
+            --secondary-blue: #0080FF;
+            --accent-purple: #8000FF;
+            --dark-bg: #0A0A0A;
+            --card-bg: #111111;
+            --text-primary: #FFFFFF;
+            --text-secondary: #CCCCCC;
+        }
+
+        .font-orbitron { font-family: 'Orbitron', monospace; }
+        .font-space { font-family: 'Space Grotesk', sans-serif; }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+        }
+
+        .glass {
+            background: rgba(17, 17, 17, 0.3);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+        }
+
+        .glass-card {
+            background: rgba(17, 17, 17, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 255, 255, 0.15);
+        }
+
+        .text-gradient {
+            background: linear-gradient(45deg, var(--primary-cyan), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .btn-cyber {
+            background: linear-gradient(45deg, var(--primary-cyan), var(--secondary-blue));
+            border: 2px solid var(--primary-cyan);
+            transition: all 0.3s ease;
+        }
+
+        .btn-cyber:hover {
+            background: linear-gradient(45deg, var(--secondary-blue), var(--accent-purple));
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 255, 255, 0.3);
+        }
+
+        .animated-gradient {
+            background: linear-gradient(45deg, var(--primary-cyan), var(--accent-purple), var(--secondary-blue));
+            background-size: 300% 300%;
+            animation: gradientShift 3s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body class="font-space">
+
+    <!-- Header -->
+    <header class="glass fixed w-full z-50 py-4 px-6 md:px-12">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold font-orbitron text-gradient hover:scale-110 transition-transform duration-300 p-2">
+                bitsdeve
+            </a>
+            <div class="hidden md:flex space-x-6">
+                <a href="/" class="text-gray-300 hover:text-cyan-400 transition-colors duration-300 font-medium p-2">Inicio</a>
+                <a href="/#sobre-nosotros" class="text-gray-300 hover:text-cyan-400 transition-colors duration-300 font-medium p-2">Sobre Nosotros</a>
+                <a href="/#stack" class="text-gray-300 hover:text-cyan-400 transition-colors duration-300 font-medium p-2">Servicios</a>
+                <a href="/#proyectos" class="text-gray-300 hover:text-cyan-400 transition-colors duration-300 font-medium p-2">Proyectos</a>
+                <a href="/#contacto" class="text-gray-300 hover:text-cyan-400 transition-colors duration-300 font-medium p-2">Contacto</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative animated-gradient min-h-screen flex items-center justify-center text-center p-6 md:p-12 overflow-hidden">
+        <div class="relative z-10 max-w-5xl mx-auto glass-card p-8 md:p-12 rounded-3xl">
+            <div class="text-6xl mb-6">💬</div>
+            <h1 class="text-4xl md:text-6xl font-extrabold font-orbitron text-white mb-6">
+                WhatsApp Business
+                <span class="text-gradient block">Automation</span>
+            </h1>
+            <h2 class="text-xl md:text-2xl font-light text-cyan-100 mb-8">
+                Bots Inteligentes para Atención al Cliente 24/7 con API Oficial de Meta
+            </h2>
+            <p class="text-lg md:text-xl text-gray-200 mb-10 leading-relaxed">
+                Automatiza tus ventas nocturnas y de fin de semana con bots conversacionales inteligentes. 
+                <strong>Conexión oficial</strong> a WhatsApp Business API a través de proveedores certificados por Meta.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#servicios" class="btn-cyber text-white font-bold py-4 px-8 rounded-full font-orbitron">
+                    VER SERVICIOS
+                </a>
+                <a href="#contacto-whatsapp" class="border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black font-bold py-4 px-8 rounded-full font-orbitron transition-all duration-300">
+                    CONSULTA GRATIS
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Section -->
+    <section id="servicios" class="py-16 md:py-24 px-6 mx-4 my-8">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl md:text-4xl font-extrabold font-orbitron text-gradient text-center mb-12">
+                <i class="fas fa-robot text-cyan-400 mr-3"></i> Nuestros Servicios de WhatsApp Business
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Bot Conversacional -->
+                <div class="glass-card p-8 rounded-2xl card-hover text-center">
+                    <div class="text-4xl mb-4">🤖</div>
+                    <h3 class="text-2xl font-bold font-orbitron text-cyan-400 mb-4">Bot Conversacional IA</h3>
+                    <ul class="text-gray-300 space-y-3 text-left">
+                        <li class="flex items-start"><i class="fas fa-check-circle text-cyan-500 mr-3 mt-1"></i>Respuestas automáticas inteligentes</li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-cyan-500 mr-3 mt-1"></i>Procesamiento de lenguaje natural</li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-cyan-500 mr-3 mt-1"></i>Personalización por industria</li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-cyan-500 mr-3 mt-1"></i>Escalamiento a humano cuando sea necesario</li>
+                    </ul>
+                </div>
+
+                <!-- Automatización de Ventas -->
+                <div class="glass-card p-8 rounded-2xl card-hover text-center">
+                    <div class="text-4xl mb-4">💰</div>
+                    <h3 class="text-2xl font-bold font-orbitron text-purple-400 mb-4">Automatización de Ventas</h3>
+                    <ul class="text-gray-300 space-y-3 text-left">
+                        <li class="flex items-start"><i class="fas fa-check-circle text-purple-500 mr-3 mt-1"></i>Captura de leads automática</li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-purple-500 mr-3 mt-1"></i>Gestión de catálogo de productos</li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-purple-500 mr-3 mt-1"></i>Procesamiento de pedidos</li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-purple-500 mr-3 mt-1"></i>Seguimiento post-venta</li>
+                    </ul>
+                </div>
+
+                <!-- Atención 24/7 -->
+                <div class="glass-card p-8 rounded-2xl card-hover text-center">
+                    <div class="text-4xl mb-4">🌙</div>
+                    <h3 class="text-2xl font-bold font-orbitron text-green-400 mb-4">Atención 24/7</h3>
+                    <ul class="text-gray-300 space-y-3 text-left">
+                        <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>Nunca pierdas una venta nocturna</li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>Respuesta inmediata a consultas</li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>Horarios de fin de semana cubiertos</li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>Múltiples idiomas disponibles</li>
+                    </ul>
+                </div>
+
+                <!-- Integración CRM -->
+                <div class="glass-card p-8 rounded-2xl card-hover text-center">
+                    <div class="text-4xl mb-4">📊</div>
+                    <h3 class="text-2xl font-bold font-orbitron text-yellow-400 mb-4">Integración CRM</h3>
+                    <ul class="text-gray-300 space-y-3 text-left">
+                        <li class="flex items-start"><i class="fas fa-check-circle text-yellow-500 mr-3 mt-1"></i>Sincronización automática de contactos</li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-yellow-500 mr-3 mt-1"></i>Historial completo de conversaciones</li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-yellow-500 mr-3 mt-1"></i>Métricas y analytics avanzados</li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-yellow-500 mr-3 mt-1"></i>Integración con sistemas existentes</li>
+                    </ul>
+                </div>
+
+                <!-- API Oficial Meta -->
+                <div class="glass-card p-8 rounded-2xl card-hover text-center">
+                    <div class="text-4xl mb-4">✅</div>
+                    <h3 class="text-2xl font-bold font-orbitron text-blue-400 mb-4">API Oficial Meta</h3>
+                    <ul class="text-gray-300 space-y-3 text-left">
+                        <li class="flex items-start"><i class="fas fa-check-circle text-blue-500 mr-3 mt-1"></i>Conexión certificada por Meta</li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-blue-500 mr-3 mt-1"></i>Cumplimiento de políticas oficiales</li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-blue-500 mr-3 mt-1"></i>Máxima estabilidad y confiabilidad</li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-blue-500 mr-3 mt-1"></i>Soporte empresarial garantizado</li>
+                    </ul>
+                </div>
+
+                <!-- Configuración Personalizada -->
+                <div class="glass-card p-8 rounded-2xl card-hover text-center">
+                    <div class="text-4xl mb-4">⚙️</div>
+                    <h3 class="text-2xl font-bold font-orbitron text-red-400 mb-4">Setup Personalizado</h3>
+                    <ul class="text-gray-300 space-y-3 text-left">
+                        <li class="flex items-start"><i class="fas fa-check-circle text-red-500 mr-3 mt-1"></i>Configuración completa incluida</li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-red-500 mr-3 mt-1"></i>Verificación del número de negocio</li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-red-500 mr-3 mt-1"></i>Capacitación del equipo</li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-red-500 mr-3 mt-1"></i>Soporte técnico continuo</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Proceso Section -->
+    <section class="py-16 md:py-24 px-6 mx-4 my-8">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl md:text-4xl font-extrabold font-orbitron text-gradient text-center mb-12">
+                <i class="fas fa-cogs text-cyan-400 mr-3"></i> Proceso de Implementación
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                <!-- Paso 1 -->
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div class="text-5xl font-bold text-cyan-400 mb-4 font-orbitron">01</div>
+                    <h3 class="text-xl font-bold text-cyan-400 mb-3 font-orbitron">Consulta Inicial</h3>
+                    <p class="text-gray-300">Analizamos tus necesidades específicas y diseñamos la estrategia de automatización ideal para tu negocio.</p>
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div class="text-5xl font-bold text-purple-400 mb-4 font-orbitron">02</div>
+                    <h3 class="text-xl font-bold text-purple-400 mb-3 font-orbitron">Verificación API</h3>
+                    <p class="text-gray-300">Gestionamos la verificación de tu número empresarial con WhatsApp Business API a través de proveedores certificados.</p>
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div class="text-5xl font-bold text-green-400 mb-4 font-orbitron">03</div>
+                    <h3 class="text-xl font-bold text-green-400 mb-3 font-orbitron">Desarrollo Bot</h3>
+                    <p class="text-gray-300">Creamos y configuramos tu bot personalizado con IA, integrado a tus sistemas y procesos de negocio.</p>
+                </div>
+
+                <!-- Paso 4 -->
+                <div class="glass-card p-6 rounded-2xl text-center">
+                    <div class="text-5xl font-bold text-yellow-400 mb-4 font-orbitron">04</div>
+                    <h3 class="text-xl font-bold text-yellow-400 mb-3 font-orbitron">Testing & Deploy</h3>
+                    <p class="text-gray-300">Realizamos pruebas exhaustivas y desplegamos tu bot en producción con monitoreo y soporte continuo.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Casos de Uso Section -->
+    <section class="py-16 md:py-24 px-6 mx-4 my-8">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl md:text-4xl font-extrabold font-orbitron text-gradient text-center mb-12">
+                <i class="fas fa-lightbulb text-cyan-400 mr-3"></i> Casos de Uso Ideales
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <!-- E-commerce -->
+                <div class="glass-card p-8 rounded-2xl">
+                    <div class="flex items-center mb-6">
+                        <div class="text-4xl mr-4">🛒</div>
+                        <h3 class="text-2xl font-bold text-cyan-400 font-orbitron">E-commerce</h3>
+                    </div>
+                    <ul class="text-gray-300 space-y-3">
+                        <li class="flex items-start"><i class="fas fa-arrow-right text-cyan-500 mr-3 mt-1"></i>Consultas de productos 24/7</li>
+                        <li class="flex items-start"><i class="fas fa-arrow-right text-cyan-500 mr-3 mt-1"></i>Procesamiento automático de pedidos</li>
+                        <li class="flex items-start"><i class="fas fa-arrow-right text-cyan-500 mr-3 mt-1"></i>Seguimiento de envíos</li>
+                        <li class="flex items-start"><i class="fas fa-arrow-right text-cyan-500 mr-3 mt-1"></i>Recuperación de carritos abandonados</li>
+                    </ul>
+                </div>
+
+                <!-- Restaurantes -->
+                <div class="glass-card p-8 rounded-2xl">
+                    <div class="flex items-center mb-6">
+                        <div class="text-4xl mr-4">🍕</div>
+                        <h3 class="text-2xl font-bold text-purple-400 font-orbitron">Restaurantes</h3>
+                    </div>
+                    <ul class="text-gray-300 space-y-3">
+                        <li class="flex items-start"><i class="fas fa-arrow-right text-purple-500 mr-3 mt-1"></i>Reservas automáticas</li>
+                        <li class="flex items-start"><i class="fas fa-arrow-right text-purple-500 mr-3 mt-1"></i>Pedidos de delivery</li>
+                        <li class="flex items-start"><i class="fas fa-arrow-right text-purple-500 mr-3 mt-1"></i>Menú interactivo</li>
+                        <li class="flex items-start"><i class="fas fa-arrow-right text-purple-500 mr-3 mt-1"></i>Promociones personalizadas</li>
+                    </ul>
+                </div>
+
+                <!-- Servicios -->
+                <div class="glass-card p-8 rounded-2xl">
+                    <div class="flex items-center mb-6">
+                        <div class="text-4xl mr-4">🔧</div>
+                        <h3 class="text-2xl font-bold text-green-400 font-orbitron">Servicios</h3>
+                    </div>
+                    <ul class="text-gray-300 space-y-3">
+                        <li class="flex items-start"><i class="fas fa-arrow-right text-green-500 mr-3 mt-1"></i>Agendamiento de citas</li>
+                        <li class="flex items-start"><i class="fas fa-arrow-right text-green-500 mr-3 mt-1"></i>Presupuestos automáticos</li>
+                        <li class="flex items-start"><i class="fas fa-arrow-right text-green-500 mr-3 mt-1"></i>Seguimiento de servicios</li>
+                        <li class="flex items-start"><i class="fas fa-arrow-right text-green-500 mr-3 mt-1"></i>FAQ automatizadas</li>
+                    </ul>
+                </div>
+
+                <!-- Inmobiliarias -->
+                <div class="glass-card p-8 rounded-2xl">
+                    <div class="flex items-center mb-6">
+                        <div class="text-4xl mr-4">🏠</div>
+                        <h3 class="text-2xl font-bold text-yellow-400 font-orbitron">Inmobiliarias</h3>
+                    </div>
+                    <ul class="text-gray-300 space-y-3">
+                        <li class="flex items-start"><i class="fas fa-arrow-right text-yellow-500 mr-3 mt-1"></i>Búsqueda de propiedades</li>
+                        <li class="flex items-start"><i class="fas fa-arrow-right text-yellow-500 mr-3 mt-1"></i>Agendamiento de visitas</li>
+                        <li class="flex items-start"><i class="fas fa-arrow-right text-yellow-500 mr-3 mt-1"></i>Información detallada</li>
+                        <li class="flex items-start"><i class="fas fa-arrow-right text-yellow-500 mr-3 mt-1"></i>Captura de leads calificados</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact WhatsApp Section -->
+    <section id="contacto-whatsapp" class="py-16 md:py-24 px-6 mx-4 my-8">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="text-3xl md:text-4xl font-extrabold font-orbitron text-gradient mb-8">
+                <i class="fas fa-rocket text-cyan-400 mr-3"></i> ¿Listo para Automatizar tu WhatsApp Business?
+            </h2>
+            <p class="text-gray-300 text-xl mb-8">
+                Obtén una consulta gratuita de 30 minutos para evaluar cómo un bot de WhatsApp puede transformar tus ventas nocturnas y de fin de semana.
+            </p>
+            
+            <div class="glass-card p-8 rounded-2xl">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="text-center md:text-left">
+                        <h3 class="text-2xl font-bold text-cyan-400 mb-4 font-orbitron">🎯 Consulta Gratuita Incluye:</h3>
+                        <ul class="text-gray-300 space-y-3 text-left">
+                            <li class="flex items-start"><i class="fas fa-check-circle text-cyan-500 mr-3 mt-1"></i>Análisis de tu negocio actual</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-cyan-500 mr-3 mt-1"></i>Estrategia de automatización personalizada</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-cyan-500 mr-3 mt-1"></i>Demo en vivo de funcionalidades</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-cyan-500 mr-3 mt-1"></i>Cotización detallada sin compromiso</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="mb-6">
+                            <div class="text-6xl mb-4">📱</div>
+                            <p class="text-lg text-gray-300 mb-4">Hablemos por WhatsApp ahora</p>
+                        </div>
+                        <a href="https://wa.me/5491122517795?text=Hola%20Richard%2C%20quiero%20una%20consulta%20gratuita%20sobre%20automatización%20de%20WhatsApp%20Business%20para%20mi%20negocio" 
+                           target="_blank"
+                           class="btn-cyber text-white font-bold py-4 px-8 rounded-full font-orbitron text-xl inline-block mb-4">
+                            💬 CONSULTA GRATIS AHORA
+                        </a>
+                        <p class="text-sm text-gray-400">Respuesta en menos de 2 horas</p>
+                    </div>
+                </div>
+                
+                <div class="mt-8 pt-8 border-t border-gray-600">
+                    <h4 class="text-xl font-bold text-cyan-400 mb-4 font-orbitron">💼 También puedes contactarnos por:</h4>
+                    <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8">
+                        <a href="mailto:contacto@bitsdeve.com" class="text-cyan-400 hover:text-cyan-300 text-lg">
+                            <i class="fas fa-envelope mr-2"></i> contacto@bitsdeve.com
+                        </a>
+                        <a href="/#contacto" class="text-cyan-400 hover:text-cyan-300 text-lg">
+                            <i class="fas fa-globe mr-2"></i> Formulario web
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="glass py-8 px-6 text-center text-gray-400">
+        <div class="container mx-auto">
+            <p class="font-orbitron">&copy; 2024 <span class="text-gradient">bitsdeve</span>. Todos los derechos reservados.</p>
+            <div class="mt-4 flex justify-center space-x-6">
+                <a href="/terminos-de-servicio" class="text-gray-400 hover:text-cyan-400 transition-colors duration-300">Términos de Servicio</a>
+                <a href="/politica-de-privacidad" class="text-gray-400 hover:text-cyan-400 transition-colors duration-300">Política de Privacidad</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Enhanced scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0) scale(1)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.glass-card, .card-hover').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(50px) scale(0.95)';
+            el.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+            observer.observe(el);
+        });
+    </script>
+
+</body>
+</html>
