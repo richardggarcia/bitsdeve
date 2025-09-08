@@ -77,9 +77,10 @@
     <!-- Lottie Player -->
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <style>
-        /* Custom CSS Variables - Esquema Negro-Azul Claro */
+        /* Custom CSS Variables - Esquema Verde Agua */
         :root {
             --primary-cyan: #00FFFF;
+            --verde-agua: #20B2AA;
             --secondary-blue: #0080FF;
             --accent-purple: #8000FF;
             --dark-bg: #0A0A0A;
@@ -140,7 +141,7 @@
         }
 
         .gradient-blue-light {
-            background: linear-gradient(135deg, var(--secondary-blue) 0%, var(--primary-cyan) 100%);
+            background: linear-gradient(135deg, var(--primary-cyan) 0%, var(--verde-agua) 100%);
         }
 
         /* Glow effects - Cian */
@@ -157,17 +158,10 @@
             text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
         }
 
-        /* Animated gradient - Cian-Purple */
+        /* Static gradient - Verde Agua fijo */
         .animated-gradient {
-            background: linear-gradient(45deg, var(--dark-bg), var(--primary-cyan), var(--accent-purple));
-            background-size: 300% 300%;
-            animation: gradientShift 3s ease infinite;
-        }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            background: linear-gradient(45deg, var(--dark-bg), var(--primary-cyan), var(--verde-agua));
+            /* Eliminamos la animación mareante */
         }
 
         /* Particle background */
