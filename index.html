@@ -77,17 +77,16 @@
     <!-- Lottie Player -->
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <style>
-        /* Custom CSS Variables - Esquema Azul-Blanco */
+        /* Custom CSS Variables - Esquema Negro-Azul Claro */
         :root {
-            --primary-blue: #0EA5E9;
-            --secondary-blue: #0284C7;
-            --accent-blue: #38BDF8;
-            --light-bg: #F8FAFC;
-            --card-bg: #FFFFFF;
-            --gradient-bg: #EFF6FF;
-            --text-primary: #1E293B;
-            --text-secondary: #64748B;
-            --border-color: #E2E8F0;
+            --primary-cyan: #00FFFF;
+            --secondary-blue: #0080FF;
+            --accent-purple: #8000FF;
+            --dark-bg: #0A0A0A;
+            --card-bg: #111111;
+            --text-primary: #FFFFFF;
+            --text-secondary: #CCCCCC;
+            --border-color: rgba(0, 255, 255, 0.2);
         }
 
         /* Apply fonts globally */
@@ -101,7 +100,7 @@
 
         body {
             font-family: 'Space Grotesk', sans-serif;
-            background: var(--light-bg);
+            background: var(--dark-bg);
             color: var(--text-primary);
         }
 
@@ -120,47 +119,47 @@
             background: var(--primary-cyan);
         }
 
-        /* Glassmorphism effect - Azul-Blanco */
+        /* Glassmorphism effect - Negro-Azul */
         .glass {
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(17, 17, 17, 0.3);
             backdrop-filter: blur(15px);
             border: 1px solid var(--border-color);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
 
         .glass-card {
-            background: var(--card-bg);
+            background: rgba(17, 17, 17, 0.4);
             backdrop-filter: blur(20px);
-            border: 1px solid var(--border-color);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 255, 255, 0.15);
+            box-shadow: 0 10px 25px rgba(0, 255, 255, 0.1);
         }
 
-        /* Gradient backgrounds - Azul */
+        /* Gradient backgrounds - Cian-Purple */
         .gradient-blue {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+            background: linear-gradient(135deg, var(--primary-cyan) 0%, var(--accent-purple) 100%);
         }
 
         .gradient-blue-light {
-            background: linear-gradient(135deg, var(--secondary-blue) 0%, var(--primary-blue) 100%);
+            background: linear-gradient(135deg, var(--secondary-blue) 0%, var(--primary-cyan) 100%);
         }
 
-        /* Glow effects - Azul */
+        /* Glow effects - Cian */
         .glow-blue {
-            box-shadow: 0 0 20px rgba(14, 165, 233, 0.3);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
         }
 
         .glow-blue-hover:hover {
-            box-shadow: 0 0 30px rgba(14, 165, 233, 0.6);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
             transform: translateY(-5px);
         }
 
         .text-glow {
-            text-shadow: 0 0 20px rgba(14, 165, 233, 0.5);
+            text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
         }
 
-        /* Animated gradient - Azul */
+        /* Animated gradient - Cian-Purple */
         .animated-gradient {
-            background: linear-gradient(45deg, var(--gradient-bg), var(--primary-blue), var(--accent-blue));
+            background: linear-gradient(45deg, var(--dark-bg), var(--primary-cyan), var(--accent-purple));
             background-size: 300% 300%;
             animation: gradientShift 3s ease infinite;
         }
@@ -216,18 +215,18 @@
             transform: translateY(-10px) scale(1.02);
         }
 
-        /* Button enhancements - Azul */
+        /* Button enhancements - Cian-Purple */
         .btn-cyber {
             position: relative;
             overflow: hidden;
-            background: linear-gradient(45deg, var(--primary-blue), var(--secondary-blue));
-            border: 2px solid var(--primary-blue);
+            background: linear-gradient(45deg, var(--primary-cyan), var(--secondary-blue));
+            border: 2px solid var(--primary-cyan);
             transition: all 0.3s ease;
         }
 
         .btn-cyber:hover {
-            background: linear-gradient(45deg, var(--secondary-blue), var(--accent-blue));
-            box-shadow: 0 0 25px rgba(14, 165, 233, 0.6);
+            background: linear-gradient(45deg, var(--secondary-blue), var(--accent-purple));
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
             transform: scale(1.05);
         }
 
@@ -246,9 +245,9 @@
             left: 100%;
         }
 
-        /* Text gradient - Azul */
+        /* Text gradient - Cian-Purple */
         .text-gradient {
-            background: linear-gradient(45deg, var(--primary-blue), var(--accent-blue));
+            background: linear-gradient(45deg, var(--primary-cyan), var(--accent-purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -264,15 +263,15 @@
             box-shadow: 0 25px 50px rgba(0, 255, 255, 0.3);
         }
 
-        /* Pulse animation - Azul */
+        /* Pulse animation - Cian */
         .pulse-blue {
             animation: pulseBlue 2s infinite;
         }
 
         @keyframes pulseBlue {
-            0% { box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.7); }
-            70% { box-shadow: 0 0 0 20px rgba(14, 165, 233, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(14, 165, 233, 0); }
+            0% { box-shadow: 0 0 0 0 rgba(0, 255, 255, 0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(0, 255, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 255, 255, 0); }
         }
 
         /* YouTube iframe optimizations */
@@ -372,17 +371,17 @@
                     <h1 class="text-4xl md:text-6xl font-extrabold font-orbitron text-gradient mb-4">
                         bitsdeve
                     </h1>
-                    <h2 class="text-xl md:text-3xl font-light text-secondary-blue mb-8">
+                    <h2 class="text-xl md:text-3xl font-light text-text-secondary mb-8">
                         Soluciones Web Estratégicas con Inteligencia Artificial
                     </h2>
-                    <p class="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed">
+                    <p class="text-lg md:text-xl text-gray-300 mb-10 leading-relaxed">
                         En <strong>bitsdeve</strong>, transformamos tus ideas en aplicaciones web completas, diseñando experiencias de usuario intuitivas y automatizando procesos clave con IA.
                     </p>
                     <div class="flex flex-col md:flex-row gap-4 justify-center">
                         <a href="#contacto" class="inline-block btn-cyber text-white font-bold py-4 px-8 rounded-full font-orbitron tracking-wider pulse-blue">
                             INICIA TU PROYECTO
                         </a>
-                        <a href="/whatsapp-business.html" class="inline-block border-2 border-primary-blue text-primary-blue hover:bg-primary-blue hover:text-white font-bold py-4 px-8 rounded-full font-orbitron transition-all duration-300">
+                        <a href="/whatsapp-business.html" class="inline-block border-2 border-primary-cyan text-primary-cyan hover:bg-primary-cyan hover:text-black font-bold py-4 px-8 rounded-full font-orbitron transition-all duration-300">
                             BOTS WHATSAPP
                         </a>
                     </div>
@@ -633,18 +632,18 @@
                         <!-- Contenido -->
                         <div class="text-center md:text-left">
                             <h4 class="text-2xl font-bold font-orbitron text-green-400 mb-4">Bots de WhatsApp Business con API Oficial</h4>
-                            <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                            <p class="text-gray-300 text-lg mb-6 leading-relaxed">
                                 Desarrollamos <strong>bots conversacionales inteligentes</strong> para WhatsApp Business utilizando la 
-                                <strong class="text-green-500">API oficial de Meta</strong>. Automatiza tu atención al cliente 24/7, 
+                                <strong class="text-green-400">API oficial de Meta</strong>. Automatiza tu atención al cliente 24/7, 
                                 procesa ventas nocturnas y de fin de semana, y nunca pierdas una oportunidad de negocio.
                             </p>
-                            <div class="flex flex-col md:flex-row gap-4 mb-6">
-                                <a href="/whatsapp-business.html" class="btn-cyber text-white font-bold py-3 px-6 rounded-full font-orbitron">
+                            <div class="flex flex-col md:flex-row gap-3 mb-6">
+                                <a href="/whatsapp-business.html" class="btn-cyber text-white font-medium py-2 px-5 rounded-full font-orbitron text-sm">
                                     VER SERVICIOS WHATSAPP
                                 </a>
                                 <a href="https://wa.me/5491122517795?text=Hola%20Richard%2C%20quiero%20consultar%20sobre%20bots%20de%20WhatsApp%20Business" 
                                    target="_blank"
-                                   class="border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-white font-bold py-3 px-6 rounded-full font-orbitron transition-all duration-300">
+                                   class="border-2 border-green-400 text-green-400 hover:bg-green-400 hover:text-black font-medium py-2 px-5 rounded-full font-orbitron text-sm transition-all duration-300">
                                     📱 CONSULTA WHATSAPP
                                 </a>
                             </div>
