@@ -70,98 +70,172 @@
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Orbitron + Space Grotesk -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Presentación Style + Original Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Lottie Player -->
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <style>
-        /* Custom CSS Variables - Esquema Verde Agua */
+        /* Custom CSS Variables - Estilo Presentación Premium */
         :root {
-            --primary-cyan: #00FFFF;
-            --verde-agua: #20B2AA;
-            --secondary-blue: #0080FF;
-            --accent-purple: #8000FF;
-            --dark-bg: #0A0A0A;
-            --card-bg: #111111;
-            --text-primary: #FFFFFF;
-            --text-secondary: #CCCCCC;
-            --border-color: rgba(0, 255, 255, 0.2);
+            /* Authentic Color Palette - Breaking Corporate Monotony */
+            --primary-blue: #2563EB;
+            --primary-dark: #1E40AF;
+            --primary-light: #3B82F6;
+            --secondary-indigo: #4F46E5;
+            --secondary-purple: #7C3AED;
+
+            /* Warm Accent Colors for Personality */
+            --accent-coral: #F97316;
+            --accent-amber: #F59E0B;
+            --accent-emerald: #10B981;
+            --accent-rose: #F43F5E;
+            --accent-teal: #0D9488;
+
+            /* Sophisticated Neutrals */
+            --neutral-50: #FAFAF9;
+            --neutral-100: #F5F5F4;
+            --neutral-200: #E7E5E4;
+            --neutral-300: #D6D3D1;
+            --neutral-400: #A8A29E;
+            --neutral-500: #78716C;
+            --neutral-600: #57534E;
+            --neutral-700: #44403C;
+            --neutral-800: #292524;
+            --neutral-900: #1C1917;
+
+            /* Brand Identity Colors */
+            --brand-gradient-1: #667EEA;
+            --brand-gradient-2: #764BA2;
+            --highlight-yellow: #FEF08A;
         }
 
-        /* Apply fonts globally */
-        .font-orbitron {
-            font-family: 'Orbitron', monospace;
+        /* Apply fonts globally - Presentación Style */
+        .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
         }
         
         .font-space {
             font-family: 'Space Grotesk', sans-serif;
         }
-
-        body {
-            font-family: 'Space Grotesk', sans-serif;
-            background: var(--dark-bg);
-            color: var(--text-primary);
+        
+        .font-orbitron {
+            font-family: 'Orbitron', monospace;
         }
 
-        /* Custom scrollbar */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ffffff 0%, #FAFAF9 50%, #F5F5F4 100%);
+            color: var(--neutral-800);
+            line-height: 1.6;
+        }
+
+        /* Custom scrollbar - Presentación Style */
         ::-webkit-scrollbar {
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: var(--dark-bg);
+            background: var(--neutral-100);
         }
         ::-webkit-scrollbar-thumb {
-            background: linear-gradient(45deg, var(--primary-cyan), var(--accent-purple));
+            background: linear-gradient(45deg, var(--primary-blue), var(--secondary-indigo));
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: var(--primary-cyan);
+            background: var(--primary-blue);
         }
 
-        /* Glassmorphism effect - Negro-Azul */
-        .glass {
-            background: rgba(17, 17, 17, 0.3);
-            backdrop-filter: blur(15px);
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        /* Authentic Gradient Backgrounds */
+        .gradient-bg {
+            background: linear-gradient(125deg, var(--brand-gradient-1) 0%, var(--brand-gradient-2) 100%);
         }
 
-        .glass-card {
-            background: rgba(17, 17, 17, 0.4);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(0, 255, 255, 0.15);
-            box-shadow: 0 10px 25px rgba(0, 255, 255, 0.1);
+        .gradient-text {
+            background: linear-gradient(120deg, var(--primary-blue) 0%, var(--secondary-indigo) 50%, var(--secondary-purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        /* Gradient backgrounds - Cian-Purple */
-        .gradient-blue {
-            background: linear-gradient(135deg, var(--primary-cyan) 0%, var(--accent-purple) 100%);
+        .card-gradient {
+            background: linear-gradient(145deg, #ffffff 0%, #FAFAF9 100%);
         }
 
-        .gradient-blue-light {
-            background: linear-gradient(135deg, var(--primary-cyan) 0%, var(--verde-agua) 100%);
+        /* Warm Accent Gradients */
+        .warm-gradient {
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-amber) 100%);
         }
 
-        /* Glow effects - Cian */
-        .glow-blue {
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+        .success-gradient {
+            background: linear-gradient(135deg, var(--accent-emerald) 0%, var(--accent-teal) 100%);
         }
 
-        .glow-blue-hover:hover {
-            box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
-            transform: translateY(-5px);
+        /* Authentic Cards with Personality */
+        .premium-card {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--neutral-200);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border-radius: 16px;
         }
 
-        .text-glow {
-            text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+        .premium-card:hover {
+            transform: translateY(-6px) rotate(0.5deg);
+            box-shadow: 0 25px 50px -12px rgba(37, 99, 235, 0.15), 0 15px 25px -8px rgba(0, 0, 0, 0.1);
+            border-color: var(--accent-coral);
         }
 
-        /* Static gradient - Verde Agua fijo */
-        .animated-gradient {
-            background: linear-gradient(45deg, var(--dark-bg), var(--primary-cyan), var(--verde-agua));
-            /* Eliminamos la animación mareante */
+        /* Authentic Button Styles */
+        .premium-btn {
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-amber) 100%);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 6px 15px -3px rgba(249, 115, 22, 0.4);
+            border-radius: 12px;
+            font-weight: 600;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .premium-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.7s ease;
+        }
+
+        .premium-btn:hover::before {
+            left: 100%;
+        }
+
+        .premium-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 25px 40px -8px rgba(249, 115, 22, 0.5);
+        }
+
+        .secondary-btn {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-indigo) 100%);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 12px;
+            font-weight: 500;
+        }
+
+        /* Hero Pattern Background */
+        .hero-pattern {
+            background-image:
+                radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(79, 70, 229, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(16, 185, 129, 0.02) 0%, transparent 50%);
         }
 
         /* Particle background */
@@ -177,10 +251,10 @@
             position: absolute;
             width: 2px;
             height: 2px;
-            background: var(--primary-cyan);
+            background: var(--primary-blue);
             border-radius: 50%;
             animation: float 6s ease-in-out infinite;
-            opacity: 0.7;
+            opacity: 0.3;
         }
 
         .particle:nth-child(1) { left: 10%; animation-delay: 0s; }
@@ -209,19 +283,23 @@
             transform: translateY(-10px) scale(1.02);
         }
 
-        /* Button enhancements - Cian-Purple */
+        /* Legacy Button Styles - Updated */
         .btn-cyber {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-indigo) 100%);
+            border: 2px solid var(--primary-blue);
+            color: white;
+            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-            background: linear-gradient(45deg, var(--primary-cyan), var(--secondary-blue));
-            border: 2px solid var(--primary-cyan);
-            transition: all 0.3s ease;
         }
 
         .btn-cyber:hover {
-            background: linear-gradient(45deg, var(--secondary-blue), var(--accent-purple));
-            box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
-            transform: scale(1.05);
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-purple) 100%);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+            transform: translateY(-2px);
         }
 
         .btn-cyber::before {
@@ -237,14 +315,6 @@
 
         .btn-cyber:hover::before {
             left: 100%;
-        }
-
-        /* Text gradient - Cian-Purple */
-        .text-gradient {
-            background: linear-gradient(45deg, var(--primary-cyan), var(--accent-purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
         /* Enhanced card hover */
@@ -346,55 +416,55 @@
         }
     </style>
 </head>
-<body class="font-space">
+<body class="font-poppins">
 
     <!-- Header Section -->
-    <header class="fixed w-full z-50 py-4 px-6 md:px-12 gradient-blue-light backdrop-blur-md border-b border-white/10 shadow-lg">
+    <header class="fixed w-full z-50 py-4 px-6 md:px-12 bg-white/95 backdrop-blur-lg border-b border-neutral-200 shadow-sm">
         <nav class="container mx-auto flex justify-between items-center">
-            <a href="#hero" class="text-2xl font-bold font-orbitron text-white hover:scale-110 transition-transform duration-300 p-2 drop-shadow-lg">
+            <a href="#hero" class="text-2xl font-bold font-playfair gradient-text hover:scale-110 transition-transform duration-300 p-2">
                 bitsdeve
             </a>
-            <div class="hidden md:flex space-x-6">
-                <a href="#sobre-nosotros" class="text-white hover:text-cyan-200 transition-colors duration-300 font-medium p-2 drop-shadow">Sobre Nosotros</a>
-                <a href="#stack" class="text-white hover:text-cyan-200 transition-colors duration-300 font-medium p-2 drop-shadow">Servicios y Stack</a>
-                <a href="#proyectos" class="text-white hover:text-cyan-200 transition-colors duration-300 font-medium p-2 drop-shadow">Proyectos</a>
-                <a href="#contacto" class="text-white hover:text-cyan-200 transition-colors duration-300 font-medium p-2 drop-shadow">Contacto</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#sobre-nosotros" class="text-neutral-600 hover:text-primary-blue transition-colors duration-300 font-medium font-poppins px-3 py-2 rounded-md text-sm">Sobre Nosotros</a>
+                <a href="#stack" class="text-neutral-600 hover:text-primary-blue transition-colors duration-300 font-medium font-poppins px-3 py-2 rounded-md text-sm">Servicios</a>
+                <a href="#proyectos" class="text-neutral-600 hover:text-primary-blue transition-colors duration-300 font-medium font-poppins px-3 py-2 rounded-md text-sm">Proyectos</a>
+                <a href="#contacto" class="text-neutral-600 hover:text-primary-blue transition-colors duration-300 font-medium font-poppins px-3 py-2 rounded-md text-sm">Contacto</a>
             </div>
             <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" class="md:hidden text-white hover:text-cyan-200 focus:outline-none focus:ring-2 focus:ring-cyan-200 rounded-lg p-2">
+            <button id="mobile-menu-button" class="md:hidden text-neutral-600 hover:text-primary-blue focus:outline-none focus:ring-2 focus:ring-primary-blue rounded-lg p-2">
                 <i class="fas fa-bars text-xl"></i>
             </button>
         </nav>
     </header>
 
     <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 gradient-blue z-40 hidden flex flex-col items-center justify-center space-y-8 md:hidden">
-        <button id="close-mobile-menu-button" class="absolute top-6 right-6 text-white hover:text-cyan-200 focus:outline-none focus:ring-2 focus:ring-cyan-200 rounded-lg p-2">
+    <div id="mobile-menu" class="fixed inset-0 gradient-bg z-40 hidden flex flex-col items-center justify-center space-y-8 md:hidden">
+        <button id="close-mobile-menu-button" class="absolute top-6 right-6 text-white hover:text-neutral-200 focus:outline-none focus:ring-2 focus:ring-white rounded-lg p-2">
             <i class="fas fa-times text-2xl"></i>
         </button>
-        <a href="#sobre-nosotros" class="text-white text-3xl hover:text-cyan-200 transition-colors duration-300 font-medium font-orbitron p-4" onclick="toggleMobileMenu()">Sobre Nosotros</a>
-        <a href="#stack" class="text-white text-3xl hover:text-cyan-200 transition-colors duration-300 font-medium font-orbitron p-4" onclick="toggleMobileMenu()">Servicios y Stack</a>
-        <a href="#proyectos" class="text-white text-3xl hover:text-cyan-200 transition-colors duration-300 font-medium font-orbitron p-4" onclick="toggleMobileMenu()">Proyectos</a>
-        <a href="#contacto" class="text-white text-3xl hover:text-cyan-200 transition-colors duration-300 font-medium font-orbitron p-4" onclick="toggleMobileMenu()">Contacto</a>
+        <a href="#sobre-nosotros" class="text-white text-3xl hover:text-neutral-200 transition-colors duration-300 font-medium font-poppins p-4" onclick="toggleMobileMenu()">Sobre Nosotros</a>
+        <a href="#stack" class="text-white text-3xl hover:text-neutral-200 transition-colors duration-300 font-medium font-poppins p-4" onclick="toggleMobileMenu()">Servicios</a>
+        <a href="#proyectos" class="text-white text-3xl hover:text-neutral-200 transition-colors duration-300 font-medium font-poppins p-4" onclick="toggleMobileMenu()">Proyectos</a>
+        <a href="#contacto" class="text-white text-3xl hover:text-neutral-200 transition-colors duration-300 font-medium font-poppins p-4" onclick="toggleMobileMenu()">Contacto</a>
     </div>
 
     <!-- Hero Section -->
-    <section id="hero" class="relative animated-gradient min-h-screen flex items-center justify-center text-center p-6 md:p-12 overflow-hidden">
+    <section id="hero" class="relative min-h-screen flex items-center justify-center text-center p-6 md:p-12 overflow-hidden hero-pattern">
         <div class="container mx-auto max-w-7xl">
             <div class="grid lg:grid-cols-2 gap-12 items-center hero-grid-mobile">
                 <!-- Contenido del Hero -->
-                <div class="relative z-10 glass-card p-8 md:p-12 rounded-3xl glow-blue">
-                    <h1 class="text-4xl md:text-6xl font-extrabold font-orbitron text-gradient mb-4">
+                <div class="relative z-10 premium-card p-8 md:p-12">
+                    <h1 class="text-4xl md:text-6xl font-extrabold font-playfair gradient-text mb-4">
                         bitsdeve
                     </h1>
-                    <h2 class="text-xl md:text-3xl font-light text-text-secondary mb-8">
+                    <h2 class="text-xl md:text-3xl font-medium text-neutral-600 mb-8 font-poppins">
                         Soluciones Web Estratégicas con Inteligencia Artificial
                     </h2>
-                    <p class="text-lg md:text-xl text-gray-300 mb-10 leading-relaxed">
-                        En <strong>bitsdeve</strong>, transformamos tus ideas en aplicaciones web completas, diseñando experiencias de usuario intuitivas y automatizando procesos clave con IA.
+                    <p class="text-lg md:text-xl text-neutral-600 mb-10 leading-relaxed font-poppins">
+                        En <strong class="text-neutral-800">bitsdeve</strong>, transformamos tus ideas en aplicaciones web completas, diseñando experiencias de usuario intuitivas y automatizando procesos clave con IA.
                     </p>
                     <div class="flex justify-center">
-                        <a href="#contacto" class="inline-block btn-cyber text-white font-bold py-3 px-6 rounded-full font-orbitron tracking-wider pulse-blue">
+                        <a href="#contacto" class="premium-btn text-white font-bold py-4 px-8 rounded-full font-space tracking-wider">
                             INICIA TU PROYECTO
                         </a>
                     </div>
@@ -438,7 +508,7 @@
     <section id="sobre-nosotros" class="py-16 md:py-24 px-6 mx-4 my-8">
         <div class="container mx-auto max-w-5xl">
             <h2 class="text-3xl md:text-4xl font-extrabold font-orbitron text-gradient text-center mb-12">
-                <i class="fas fa-building text-cyan-400 mr-3"></i> Sobre bitsdeve
+                <i class="fas fa-building text-primary-blue mr-3"></i> Sobre bitsdeve
             </h2>
             <div class="grid md:grid-cols-2 gap-12 items-start">
                 <!-- Our Mission/Vision Card -->
@@ -550,7 +620,7 @@
                         <i class="fas fa-robot text-cyan-400 mr-3"></i> Automatización & IA
                     </h3>
                     <ul class="text-gray-300 space-y-2 text-lg">
-                        <li class="flex items-center"><i class="fas fa-check-circle text-cyan-500 mr-4 w-5"></i><span class="flex-1 text-center">Bots de WhatsApp Business (API Oficial)</span></li>
+                        <!-- <li class="flex items-center"><i class="fas fa-check-circle text-cyan-500 mr-4 w-5"></i><span class="flex-1 text-center">Bots de WhatsApp Business (API Oficial)</span></li> -->
                         <li class="flex items-center"><i class="fas fa-check-circle text-cyan-500 mr-4 w-5"></i><span class="flex-1 text-center">Automatización con IA y Machine Learning</span></li>
                         <li class="flex items-center"><i class="fas fa-check-circle text-cyan-500 mr-4 w-5"></i><span class="flex-1 text-center">Atención al Cliente 24/7</span></li>
                         <li class="flex items-center"><i class="fas fa-check-circle text-cyan-500 mr-4 w-5"></i><span class="flex-1 text-center">Web Scraping y Procesamiento de Datos</span></li>
@@ -635,7 +705,8 @@
 
             </div>
             
-            <!-- WhatsApp Business Section -->
+            <!-- WhatsApp Business Section - COMENTADO: EN DESARROLLO -->
+            <!--
             <div class="mt-16">
                 <h3 class="text-2xl md:text-3xl font-extrabold font-orbitron text-gradient text-center mb-8">
                     Especialización en WhatsApp Business
@@ -678,6 +749,7 @@
                     </div>
                 </div>
             </div>
+            -->
         </div>
     </section>
 
@@ -719,7 +791,7 @@
                     <div class="space-y-2">
                         <p><strong>Email:</strong> <a href="mailto:contacto@bitsdeve.com" class="text-cyan-400 hover:text-cyan-300 hover:underline">contacto@bitsdeve.com</a></p>
                         <p><strong>WhatsApp:</strong> <a href="https://wa.me/5491122517795" class="text-cyan-400 hover:text-cyan-300 hover:underline">+54 9 11 2251-7795</a></p>
-                        <p><strong>Especialización:</strong> <a href="/whatsapp-business.html" class="text-cyan-400 hover:text-cyan-300 hover:underline">WhatsApp Business Automation</a></p>
+                        <!-- <p><strong>Especialización:</strong> <a href="/whatsapp-business.html" class="text-cyan-400 hover:text-cyan-300 hover:underline">WhatsApp Business Automation</a></p> -->
                     </div>
                 </div>
                 <div class="mt-8 flex justify-center space-x-6 text-3xl">
@@ -784,7 +856,7 @@
             <div class="mt-4 flex justify-center space-x-6">
                 <a href="/terminos-de-servicio.html" class="text-gray-400 hover:text-cyan-400 transition-colors duration-300">Términos de Servicio</a>
                 <a href="/politica-de-privacidad.html" class="text-gray-400 hover:text-cyan-400 transition-colors duration-300">Política de Privacidad</a>
-                <a href="/whatsapp-business.html" class="text-gray-400 hover:text-cyan-400 transition-colors duration-300">WhatsApp Business</a>
+                <!-- <a href="/whatsapp-business.html" class="text-gray-400 hover:text-cyan-400 transition-colors duration-300">WhatsApp Business</a> -->
             </div>
         </div>
     </footer>
