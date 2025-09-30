@@ -419,10 +419,18 @@
 <body class="font-poppins">
 
     <!-- Header Section -->
-    <header class="fixed w-full z-50 py-4 px-6 md:px-12 bg-white/95 backdrop-blur-lg border-b border-neutral-200 shadow-sm">
+    <header class="fixed w-full z-50 py-2 px-6 md:px-12 bg-white/95 backdrop-blur-lg border-b border-neutral-200 shadow-sm">
         <nav class="container mx-auto flex justify-between items-center">
-            <a href="#hero" class="text-3xl font-extrabold font-playfair gradient-text hover:scale-110 transition-transform duration-300 p-3 rounded-lg hover:shadow-lg hover:shadow-primary-blue/30">
-                <span style="letter-spacing: 0.05em; text-shadow: 0 2px 10px rgba(37, 99, 235, 0.3);">bitsdeve</span>
+            <a href="#hero" class="flex flex-col items-center hover:scale-105 transition-transform duration-300 p-2">
+                <lottie-player
+                    src="./Live chatbot.json"
+                    background="transparent"
+                    speed="1"
+                    style="width: 60px; height: 60px;"
+                    loop
+                    autoplay>
+                </lottie-player>
+                <span class="text-lg font-extrabold font-playfair gradient-text" style="letter-spacing: 0.05em; margin-top: -8px;">bitsdeve</span>
             </a>
             <div class="hidden md:flex space-x-8">
                 <a href="#sobre-nosotros" class="text-neutral-600 hover:text-primary-blue transition-colors duration-300 font-medium font-poppins px-3 py-2 rounded-md text-sm">Sobre Nosotros</a>
@@ -786,16 +794,16 @@
                     </div>
                 </div>
                 <div class="mt-8 flex justify-center space-x-6 text-3xl">
-                    <a href="https://github.com/richardggarcia" target="_blank" class="text-gray-400 hover:text-cyan-400 transition-colors duration-300 rounded-full p-2 hover:scale-110">
+                    <a href="https://github.com/richardggarcia" target="_blank" class="text-neutral-800 hover:text-primary-blue transition-all duration-300 rounded-full p-2 hover:scale-110 hover:shadow-lg">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/richardgarciac/" target="_blank" class="text-gray-400 hover:text-cyan-400 transition-colors duration-300 rounded-full p-2 hover:scale-110">
+                    <a href="https://www.linkedin.com/in/richardgarciac/" target="_blank" class="text-neutral-800 hover:text-secondary-indigo transition-all duration-300 rounded-full p-2 hover:scale-110 hover:shadow-lg">
                         <i class="fab fa-linkedin"></i>
                     </a>
-                    <a href="https://twitter.com/richardg646" target="_blank" class="text-gray-400 hover:text-cyan-400 transition-colors duration-300 rounded-full p-2 hover:scale-110">
+                    <a href="https://twitter.com/richardg646" target="_blank" class="text-neutral-800 hover:text-accent-teal transition-all duration-300 rounded-full p-2 hover:scale-110 hover:shadow-lg">
                         <i class="fab fa-twitter"></i>
                     </a>
-                    <a href="https://instagram.com/rggc646" target="_blank" class="text-gray-400 hover:text-cyan-400 transition-colors duration-300 rounded-full p-2 hover:scale-110">
+                    <a href="https://instagram.com/rggc646" target="_blank" class="text-neutral-800 hover:text-accent-coral transition-all duration-300 rounded-full p-2 hover:scale-110 hover:shadow-lg">
                         <i class="fab fa-instagram"></i>
                     </a>
                 </div>
@@ -840,14 +848,13 @@
     </div>
 
     <!-- Footer Section -->
-    <footer class="glass py-8 px-6 text-center text-gray-400">
+    <footer class="glass py-8 px-6 text-center">
         <div class="container mx-auto">
-            <p class="font-orbitron">&copy; 2024 <span class="text-gradient">bitsdeve</span>. Todos los derechos reservados.</p>
-            <p class="mt-2">Creado con <i class="fas fa-heart text-red-500"></i> por el equipo de <span class="text-cyan-400">bitsdeve</span>.</p>
-            <div class="mt-4 flex justify-center space-x-6">
-                <a href="/terminos-de-servicio.html" class="text-gray-400 hover:text-cyan-400 transition-colors duration-300">Términos de Servicio</a>
-                <a href="/politica-de-privacidad.html" class="text-gray-400 hover:text-cyan-400 transition-colors duration-300">Política de Privacidad</a>
-                <!-- <a href="/whatsapp-business.html" class="text-gray-400 hover:text-cyan-400 transition-colors duration-300">WhatsApp Business</a> -->
+            <p class="font-playfair text-neutral-800 font-semibold">&copy; 2024 <span class="text-gradient">bitsdeve</span>. Todos los derechos reservados.</p>
+            <p class="mt-2 text-neutral-700 font-poppins">Creado con <i class="fas fa-heart text-red-500"></i> por el equipo de <span class="text-primary-blue font-semibold">bitsdeve</span>.</p>
+            <div class="mt-4 flex justify-center space-x-6 font-poppins">
+                <a href="/terminos-de-servicio.html" class="text-neutral-800 hover:text-primary-blue transition-colors duration-300 font-medium">Términos de Servicio</a>
+                <a href="/politica-de-privacidad.html" class="text-neutral-800 hover:text-primary-blue transition-colors duration-300 font-medium">Política de Privacidad</a>
             </div>
         </div>
     </footer>

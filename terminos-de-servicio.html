@@ -6,83 +6,141 @@
     <title>Términos de Servicio | bitsdeve</title>
     <meta name="description" content="Términos y condiciones de uso de los servicios de bitsdeve - Desarrollo Web con IA">
     <link rel="canonical" href="https://bitsdeve.com/terminos-de-servicio">
-    
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Orbitron + Space Grotesk -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Presentación Style + Original Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+
     <style>
-        /* Usar los mismos estilos del index.html */
+        /* Custom CSS Variables - Estilo Presentación Premium */
         :root {
-            --primary-cyan: #00FFFF;
-            --verde-agua: #20B2AA;
-            --secondary-blue: #0080FF;
-            --accent-purple: #8000FF;
-            --dark-bg: #0A0A0A;
-            --card-bg: #111111;
-            --text-primary: #FFFFFF;
-            --text-secondary: #CCCCCC;
+            /* Authentic Color Palette - Breaking Corporate Monotony */
+            --primary-blue: #2563EB;
+            --primary-dark: #1E40AF;
+            --primary-light: #3B82F6;
+            --secondary-indigo: #4F46E5;
+            --secondary-purple: #7C3AED;
+
+            /* Warm Accent Colors for Personality */
+            --accent-coral: #F97316;
+            --accent-amber: #F59E0B;
+            --accent-emerald: #10B981;
+            --accent-rose: #F43F5E;
+            --accent-teal: #0D9488;
+
+            /* Sophisticated Neutrals */
+            --neutral-50: #FAFAF9;
+            --neutral-100: #F5F5F4;
+            --neutral-200: #E7E5E4;
+            --neutral-300: #D6D3D1;
+            --neutral-400: #A8A29E;
+            --neutral-500: #78716C;
+            --neutral-600: #57534E;
+            --neutral-700: #44403C;
+            --neutral-800: #292524;
+            --neutral-900: #1C1917;
+
+            /* Brand Identity Colors */
+            --brand-gradient-1: #667EEA;
+            --brand-gradient-2: #764BA2;
+            --highlight-yellow: #FEF08A;
         }
 
-        .font-orbitron { font-family: 'Orbitron', monospace; }
-        .font-space { font-family: 'Space Grotesk', sans-serif; }
+        /* Apply fonts globally - Presentación Style */
+        .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .font-space {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .font-orbitron {
+            font-family: 'Orbitron', monospace;
+        }
 
         body {
-            font-family: 'Space Grotesk', sans-serif;
-            background: var(--dark-bg);
-            color: var(--text-primary);
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ffffff 0%, #FAFAF9 50%, #F5F5F4 100%);
+            color: var(--neutral-800);
+            line-height: 1.6;
         }
 
-        .glass {
-            background: linear-gradient(135deg, var(--primary-cyan) 0%, var(--verde-agua) 100%);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(0, 255, 255, 0.2);
+        /* Custom scrollbar - Presentación Style */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--neutral-100);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, var(--primary-blue), var(--secondary-indigo));
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-blue);
         }
 
-        .glass-card {
-            background: rgba(17, 17, 17, 0.4);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(0, 255, 255, 0.15);
-        }
-
-        .text-gradient {
-            background: linear-gradient(45deg, var(--primary-cyan), var(--verde-agua));
+        .gradient-text {
+            background: linear-gradient(120deg, var(--primary-blue) 0%, var(--secondary-indigo) 50%, var(--secondary-purple) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .btn-cyber {
-            background: linear-gradient(45deg, var(--primary-cyan), var(--verde-agua));
-            border: 2px solid var(--primary-cyan);
-            transition: all 0.3s ease;
+        /* Premium Cards */
+        .premium-card {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--neutral-200);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border-radius: 16px;
         }
 
-        .btn-cyber:hover {
-            background: linear-gradient(45deg, var(--verde-agua), var(--primary-cyan));
-            box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
-            transform: scale(1.05);
+        /* Premium Button */
+        .premium-btn {
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-amber) 100%);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 6px 15px -3px rgba(249, 115, 22, 0.4);
+            border-radius: 12px;
+            font-weight: 600;
+            font-family: 'Space Grotesk', sans-serif;
         }
 
-        .gradient-blue-light {
-            background: linear-gradient(135deg, var(--primary-cyan) 0%, var(--verde-agua) 100%);
+        .premium-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 25px 40px -8px rgba(249, 115, 22, 0.5);
+        }
+
+        .secondary-btn {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-indigo) 100%);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 12px;
+            font-weight: 500;
         }
     </style>
 </head>
-<body class="font-space">
+<body class="font-poppins">
 
-    <!-- Header -->
-    <header class="fixed w-full z-50 py-4 px-6 md:px-12 gradient-blue-light backdrop-blur-md border-b border-white/10 shadow-lg">
+    <!-- Header Section -->
+    <header class="fixed w-full z-50 py-4 px-6 md:px-12 bg-white/95 backdrop-blur-lg border-b border-neutral-200 shadow-sm">
         <nav class="container mx-auto flex justify-between items-center">
-            <a href="/" class="text-2xl font-bold font-orbitron text-white hover:scale-110 transition-transform duration-300 p-2 drop-shadow-lg">
-                bitsdeve
+            <a href="/" class="text-3xl font-extrabold font-playfair gradient-text hover:scale-110 transition-transform duration-300 p-3 rounded-lg hover:shadow-lg hover:shadow-primary-blue/30">
+                <span style="letter-spacing: 0.05em; text-shadow: 0 2px 10px rgba(37, 99, 235, 0.3);">bitsdeve</span>
             </a>
             <div class="flex space-x-6">
-                <a href="/" class="text-white hover:text-cyan-200 transition-colors duration-300 font-medium p-2 drop-shadow">Inicio</a>
-                <a href="/#contacto" class="text-white hover:text-cyan-200 transition-colors duration-300 font-medium p-2 drop-shadow">Contacto</a>
+                <a href="/" class="text-neutral-600 hover:text-primary-blue transition-colors duration-300 font-medium font-poppins px-3 py-2 rounded-md text-sm">Inicio</a>
+                <a href="/#contacto" class="text-neutral-600 hover:text-primary-blue transition-colors duration-300 font-medium font-poppins px-3 py-2 rounded-md text-sm">Contacto</a>
             </div>
         </nav>
     </header>
@@ -90,19 +148,19 @@
     <!-- Main Content -->
     <main class="pt-24 pb-16 px-6">
         <div class="container mx-auto max-w-4xl">
-            <div class="glass-card p-8 md:p-12 rounded-3xl">
-                <h1 class="text-3xl md:text-4xl font-extrabold font-orbitron text-gradient text-center mb-8">
-                    <i class="fas fa-file-contract text-cyan-400 mr-3"></i>
+            <div class="premium-card p-8 md:p-12 rounded-3xl" style="background: linear-gradient(145deg, #ffffff 0%, #F0F9FF 100%); border: 2px solid rgba(37, 99, 235, 0.15);">
+                <h1 class="text-3xl md:text-5xl font-extrabold font-playfair text-center mb-6" style="background: linear-gradient(120deg, #2563EB 0%, #7C3AED 50%, #10B981 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                    <i class="fas fa-file-contract text-primary-blue mr-3"></i>
                     Términos de Servicio
                 </h1>
-                
-                <div class="text-gray-300 text-lg leading-relaxed space-y-6">
-                    <p class="text-center text-gray-400 mb-8">
+
+                <div class="text-neutral-700 text-lg leading-relaxed space-y-6 font-poppins">
+                    <p class="text-center text-neutral-600 mb-8">
                         <strong>Última actualización:</strong> Septiembre 2024
                     </p>
 
                     <section>
-                        <h2 class="text-2xl font-bold text-cyan-400 mb-4 font-orbitron">1. Introducción</h2>
+                        <h2 class="text-2xl font-bold mb-4 font-playfair" style="background: linear-gradient(120deg, #2563EB 0%, #7C3AED 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">1. Introducción</h2>
                         <p>
                             Bienvenido a bitsdeve. Estos términos de servicio ("Términos") rigen el uso de nuestros servicios de desarrollo web, automatización con IA, y soluciones tecnológicas ("Servicios") proporcionados por bitsdeve ("nosotros", "nuestro" o "la empresa").
                         </p>
@@ -112,7 +170,7 @@
                     </section>
 
                     <section>
-                        <h2 class="text-2xl font-bold text-cyan-400 mb-4 font-orbitron">2. Servicios Ofrecidos</h2>
+                        <h2 class="text-2xl font-bold mb-4 font-playfair" style="background: linear-gradient(120deg, #10B981 0%, #0D9488 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">2. Servicios Ofrecidos</h2>
                         <p>bitsdeve ofrece los siguientes servicios:</p>
                         <ul class="list-disc pl-6 space-y-2 mt-3">
                             <li>Desarrollo de aplicaciones web (React, Node.js, MongoDB)</li>
@@ -125,7 +183,7 @@
                     </section>
 
                     <section>
-                        <h2 class="text-2xl font-bold text-cyan-400 mb-4 font-orbitron">3. Servicios de WhatsApp Business</h2>
+                        <h2 class="text-2xl font-bold mb-4 font-playfair" style="background: linear-gradient(120deg, #F59E0B 0%, #F97316 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">3. Servicios de WhatsApp Business</h2>
                         <p>
                             Ofrecemos servicios especializados de desarrollo de bots y automatización para WhatsApp Business utilizando la API oficial de Meta. Estos servicios incluyen:
                         </p>
@@ -142,7 +200,7 @@
                     </section>
 
                     <section>
-                        <h2 class="text-2xl font-bold text-cyan-400 mb-4 font-orbitron">4. Obligaciones del Cliente</h2>
+                        <h2 class="text-2xl font-bold mb-4 font-playfair" style="background: linear-gradient(120deg, #7C3AED 0%, #4F46E5 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">4. Obligaciones del Cliente</h2>
                         <ul class="list-disc pl-6 space-y-2">
                             <li>Proporcionar información precisa y completa necesaria para el desarrollo</li>
                             <li>Colaborar en las etapas de testing y revisión del proyecto</li>
@@ -153,7 +211,7 @@
                     </section>
 
                     <section>
-                        <h2 class="text-2xl font-bold text-cyan-400 mb-4 font-orbitron">5. Propiedad Intelectual</h2>
+                        <h2 class="text-2xl font-bold mb-4 font-playfair" style="background: linear-gradient(120deg, #F43F5E 0%, #E11D48 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">5. Propiedad Intelectual</h2>
                         <p>
                             El código fuente desarrollado específicamente para el cliente se entrega como propiedad del mismo una vez completado el pago. Sin embargo, bitsdeve retiene los derechos sobre:
                         </p>
@@ -165,41 +223,41 @@
                     </section>
 
                     <section>
-                        <h2 class="text-2xl font-bold text-cyan-400 mb-4 font-orbitron">6. Limitación de Responsabilidad</h2>
+                        <h2 class="text-2xl font-bold mb-4 font-playfair" style="background: linear-gradient(120deg, #2563EB 0%, #10B981 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">6. Limitación de Responsabilidad</h2>
                         <p>
                             bitsdeve no será responsable por daños indirectos, incidentales o consecuenciales que surjan del uso de nuestros servicios. Nuestra responsabilidad total no excederá el monto total pagado por el cliente por los servicios específicos.
                         </p>
                     </section>
 
                     <section>
-                        <h2 class="text-2xl font-bold text-cyan-400 mb-4 font-orbitron">7. Política de Privacidad</h2>
+                        <h2 class="text-2xl font-bold mb-4 font-playfair" style="background: linear-gradient(120deg, #0D9488 0%, #14B8A6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">7. Política de Privacidad</h2>
                         <p>
-                            El tratamiento de datos personales se rige por nuestra <a href="/politica-de-privacidad" class="text-cyan-400 hover:text-cyan-300 underline">Política de Privacidad</a>, que forma parte integral de estos términos.
+                            El tratamiento de datos personales se rige por nuestra <a href="/politica-de-privacidad.html" class="text-primary-blue hover:text-secondary-indigo underline">Política de Privacidad</a>, que forma parte integral de estos términos.
                         </p>
                     </section>
 
                     <section>
-                        <h2 class="text-2xl font-bold text-cyan-400 mb-4 font-orbitron">8. Modificaciones</h2>
+                        <h2 class="text-2xl font-bold mb-4 font-playfair" style="background: linear-gradient(120deg, #4F46E5 0%, #7C3AED 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">8. Modificaciones</h2>
                         <p>
                             Nos reservamos el derecho de modificar estos términos en cualquier momento. Las modificaciones entrarán en vigor inmediatamente después de su publicación en nuestro sitio web.
                         </p>
                     </section>
 
                     <section>
-                        <h2 class="text-2xl font-bold text-cyan-400 mb-4 font-orbitron">9. Contacto</h2>
+                        <h2 class="text-2xl font-bold mb-4 font-playfair" style="background: linear-gradient(120deg, #F97316 0%, #F59E0B 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">9. Contacto</h2>
                         <p>
                             Para cualquier consulta sobre estos términos, puede contactarnos en:
                         </p>
-                        <div class="mt-3 p-4 glass-card rounded-lg">
-                            <p class="text-white"><strong>Email:</strong> <a href="mailto:contacto@bitsdeve.com" class="text-cyan-400 hover:text-cyan-300">contacto@bitsdeve.com</a></p>
-                            <p class="text-white"><strong>WhatsApp:</strong> <a href="https://wa.me/5491122517795" class="text-cyan-400 hover:text-cyan-300">+54 9 11 2251-7795</a></p>
-                            <p class="text-white"><strong>Sitio web:</strong> <a href="https://www.bitsdeve.com" class="text-cyan-400 hover:text-cyan-300">https://www.bitsdeve.com</a></p>
+                        <div class="mt-3 p-4 premium-card rounded-lg" style="background: rgba(16, 185, 129, 0.1);">
+                            <p class="text-neutral-800"><strong>Email:</strong> <a href="mailto:contacto@bitsdeve.com" class="text-primary-blue hover:text-secondary-indigo hover:underline">contacto@bitsdeve.com</a></p>
+                            <p class="text-neutral-800"><strong>WhatsApp:</strong> <a href="https://wa.me/5491122517795" class="text-accent-emerald hover:text-accent-teal hover:underline">+54 9 11 2251-7795</a></p>
+                            <p class="text-neutral-800"><strong>Sitio web:</strong> <a href="https://www.bitsdeve.com" class="text-accent-coral hover:text-accent-amber hover:underline">https://www.bitsdeve.com</a></p>
                         </div>
                     </section>
                 </div>
 
                 <div class="mt-12 text-center">
-                    <a href="/" class="btn-cyber text-white font-bold py-3 px-6 rounded-full font-orbitron">
+                    <a href="/" class="premium-btn text-white font-bold py-4 px-8 rounded-full font-space tracking-wider inline-block">
                         VOLVER AL INICIO
                     </a>
                 </div>
@@ -207,15 +265,14 @@
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="py-8 px-6 text-center text-gray-400">
+    <!-- Footer Section -->
+    <footer class="glass py-8 px-6 text-center">
         <div class="container mx-auto">
-            <p class="font-orbitron">&copy; 2024 <span class="text-gradient">bitsdeve</span>. Todos los derechos reservados.</p>
-            <p class="mt-2">Creado con <i class="fas fa-heart text-red-500"></i> por el equipo de <span class="text-cyan-400">bitsdeve</span>.</p>
-            <div class="mt-4 flex justify-center space-x-6">
-                <a href="/politica-de-privacidad.html" class="text-gray-400 hover:text-cyan-400 transition-colors duration-300">Política de Privacidad</a>
-                <a href="/whatsapp-business.html" class="text-gray-400 hover:text-cyan-400 transition-colors duration-300">WhatsApp Business</a>
-                <a href="/" class="text-gray-400 hover:text-cyan-400 transition-colors duration-300">Inicio</a>
+            <p class="font-playfair text-neutral-800 font-semibold">&copy; 2024 <span class="text-gradient">bitsdeve</span>. Todos los derechos reservados.</p>
+            <p class="mt-2 text-neutral-700 font-poppins">Creado con <i class="fas fa-heart text-red-500"></i> por el equipo de <span class="text-primary-blue font-semibold">bitsdeve</span>.</p>
+            <div class="mt-4 flex justify-center space-x-6 font-poppins">
+                <a href="/terminos-de-servicio.html" class="text-neutral-800 hover:text-primary-blue transition-colors duration-300 font-medium">Términos de Servicio</a>
+                <a href="/politica-de-privacidad.html" class="text-neutral-800 hover:text-primary-blue transition-colors duration-300 font-medium">Política de Privacidad</a>
             </div>
         </div>
     </footer>
