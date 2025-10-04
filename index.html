@@ -422,17 +422,22 @@
 
         @media (max-width: 768px) {
             .tech-badge {
-                /* Hacemos las etiquetas más pequeñas en móvil */
-                padding: 0.25rem 0.75rem;
-                font-size: 0.75rem;
+                /* Más grandes y visibles en móvil */
+                padding: 0.5rem 1rem;
+                font-size: 0.875rem;
+                font-weight: 600;
+                background: rgba(37, 99, 235, 0.25);
+                backdrop-filter: blur(10px);
+                border: 2px solid rgba(37, 99, 235, 0.4);
+                box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
                 /* La animación 'float' se mantiene activa */
             }
 
-            /* Posiciones ajustadas para móvil */
-            .tech-badge:nth-child(1) { top: 10%; left: 5%; }
-            .tech-badge:nth-child(2) { top: 25%; right: 5%; }
-            .tech-badge:nth-child(3) { bottom: 40%; left: 0%; }
-            .tech-badge:nth-child(4) { bottom: 25%; right: 0%; }
+            /* Posiciones ajustadas para móvil - mejor distribuidas */
+            .tech-badge:nth-child(1) { top: 5%; left: 2%; }
+            .tech-badge:nth-child(2) { top: 20%; right: 2%; }
+            .tech-badge:nth-child(3) { bottom: 35%; left: 2%; }
+            .tech-badge:nth-child(4) { bottom: 20%; right: 2%; }
 
             /* Ocultamos las demás para no saturar la vista */
             .tech-badge:nth-child(5),
