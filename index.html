@@ -421,6 +421,23 @@
 
         @media (max-width: 768px) {
             .tech-badge {
+                /* Hacemos las etiquetas más pequeñas en móvil */
+                padding: 0.25rem 0.75rem;
+                font-size: 0.75rem;
+                /* La animación 'float' se mantiene activa */
+            }
+
+            /* Posiciones ajustadas para móvil */
+            .tech-badge:nth-child(1) { top: 10%; left: 5%; }
+            .tech-badge:nth-child(2) { top: 25%; right: 5%; }
+            .tech-badge:nth-child(3) { bottom: 40%; left: 0%; }
+            .tech-badge:nth-child(4) { bottom: 25%; right: 0%; }
+
+            /* Ocultamos las demás para no saturar la vista */
+            .tech-badge:nth-child(5),
+            .tech-badge:nth-child(6),
+            .tech-badge:nth-child(7),
+            .tech-badge:nth-child(8) {
                 display: none;
             }
         }
