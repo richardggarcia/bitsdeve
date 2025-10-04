@@ -16,141 +16,44 @@
     <!-- Lottie Player -->
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
-    <style>
-        /* Custom CSS Variables - Estilo Presentación Premium */
-        :root {
-            /* Authentic Color Palette - Breaking Corporate Monotony */
-            --primary-blue: #2563EB;
-            --primary-dark: #1E40AF;
-            --primary-light: #3B82F6;
-            --secondary-indigo: #4F46E5;
-            --secondary-purple: #7C3AED;
+    <!-- ============================================
+         ESTILOS COMPARTIDOS - Optimización DRY
+         ============================================ -->
+    <link rel="stylesheet" href="./assets/css/shared-styles.css">
 
-            /* Warm Accent Colors for Personality */
-            --accent-coral: #F97316;
-            --accent-amber: #F59E0B;
-            --accent-emerald: #10B981;
-            --accent-rose: #F43F5E;
-            --accent-teal: #0D9488;
-
-            /* Sophisticated Neutrals */
-            --neutral-50: #FAFAF9;
-            --neutral-100: #F5F5F4;
-            --neutral-200: #E7E5E4;
-            --neutral-300: #D6D3D1;
-            --neutral-400: #A8A29E;
-            --neutral-500: #78716C;
-            --neutral-600: #57534E;
-            --neutral-700: #44403C;
-            --neutral-800: #292524;
-            --neutral-900: #1C1917;
-
-            /* Brand Identity Colors */
-            --brand-gradient-1: #667EEA;
-            --brand-gradient-2: #764BA2;
-            --highlight-yellow: #FEF08A;
-        }
-
-        /* Apply fonts globally - Presentación Style */
-        .font-poppins {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .font-playfair {
-            font-family: 'Playfair Display', serif;
-        }
-
-        .font-space {
-            font-family: 'Space Grotesk', sans-serif;
-        }
-
-        .font-orbitron {
-            font-family: 'Orbitron', monospace;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #ffffff 0%, #FAFAF9 50%, #F5F5F4 100%);
-            color: var(--neutral-800);
-            line-height: 1.6;
-        }
-
-        /* Custom scrollbar - Presentación Style */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--neutral-100);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(45deg, var(--primary-blue), var(--secondary-indigo));
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--primary-blue);
-        }
-
-        .gradient-text {
-            background: linear-gradient(120deg, var(--primary-blue) 0%, var(--secondary-indigo) 50%, var(--secondary-purple) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Premium Cards */
-        .premium-card {
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--neutral-200);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            border-radius: 16px;
-        }
-
-        /* Premium Button */
-        .premium-btn {
-            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-amber) 100%);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 6px 15px -3px rgba(249, 115, 22, 0.4);
-            border-radius: 12px;
-            font-weight: 600;
-            font-family: 'Space Grotesk', sans-serif;
-        }
-
-        .premium-btn:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 25px 40px -8px rgba(249, 115, 22, 0.5);
-        }
-
-        .secondary-btn {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-indigo) 100%);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            border-radius: 12px;
-            font-weight: 500;
-        }
-    </style>
+    <!-- Los estilos compartidos están en /assets/css/shared-styles.css -->
 </head>
 <body class="font-poppins">
 
-    <!-- Header Section -->
-    <header class="fixed w-full z-50 py-2 px-6 md:px-12 bg-white/95 backdrop-blur-lg border-b border-neutral-200 shadow-sm">
+    <!-- Header Section Mejorado -->
+    <header
+        class="fixed w-full z-50 py-3 px-6 md:px-12 bg-white/80 backdrop-blur-xl border-b border-neutral-200/50 shadow-lg transition-all duration-300">
         <nav class="container mx-auto flex justify-between items-center">
-            <a href="/" class="flex flex-col items-center hover:scale-105 transition-transform duration-300 p-2">
-                <lottie-player
-                    src="./Live chatbot.json"
-                    background="transparent"
-                    speed="1"
-                    style="width: 60px; height: 60px;"
-                    loop
-                    autoplay>
-                </lottie-player>
-                <span class="text-lg font-extrabold font-playfair gradient-text" style="letter-spacing: 0.05em; margin-top: -8px;">bitsdeve</span>
+            <!-- Logo mejorado con hover effect -->
+            <a href="/" class="flex items-center space-x-3 hover:scale-105 transition-all duration-300 p-2 rounded-xl group">
+                <div class="relative">
+                    <lottie-player src="./Live chatbot.json" background="transparent" speed="1"
+                        style="width: 50px; height: 50px;" loop autoplay>
+                    </lottie-player>
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-black font-orbitron gradient-text tracking-tight">bitsdeve</span>
+                </div>
             </a>
-            <div class="flex space-x-6">
-                <a href="/" class="text-neutral-600 hover:text-primary-blue transition-colors duration-300 font-medium font-poppins px-3 py-2 rounded-md text-sm">Inicio</a>
-                <a href="/#contacto" class="text-neutral-600 hover:text-primary-blue transition-colors duration-300 font-medium font-poppins px-3 py-2 rounded-md text-sm">Contacto</a>
+
+            <!-- Navigation mejorada -->
+            <div class="flex items-center space-x-2">
+                <a href="/"
+                    class="nav-link relative text-neutral-700 hover:text-primary-blue transition-all duration-300 font-medium font-poppins px-4 py-2 rounded-xl hover:bg-blue-50 group">
+                    <span class="relative z-10">Inicio</span>
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </a>
+                <a href="/#contacto"
+                    class="nav-link relative text-neutral-700 hover:text-primary-blue transition-all duration-300 font-medium font-poppins px-4 py-2 rounded-xl hover:bg-blue-50 group">
+                    <span class="relative z-10">Contacto</span>
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </a>
             </div>
         </nav>
     </header>
@@ -287,5 +190,9 @@
         </div>
     </footer>
 
+    <!-- ============================================
+         JAVASCRIPT COMPARTIDO - Optimización DRY
+         ============================================ -->
+    <script src="./assets/js/shared-scripts.js"></script>
 </body>
 </html>
