@@ -3,11 +3,8 @@ import { FaCheckCircle, FaLightbulb, FaUserTie, FaMapMarkerAlt, FaEnvelope } fro
 
 const About: React.FC = () => {
     return (
-        <section id="sobre-nosotros" className="py-20 md:py-32 px-6 relative overflow-hidden">
-            {/* Background Decorativo */}
-            <div className="absolute inset-0 bg-gradient-to-br from-slate-50/50 via-white to-orange-50/20"></div>
-            <div className="absolute top-0 left-0 w-72 h-72 bg-slate-400/10 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange-400/10 rounded-full blur-3xl"></div>
+        <section id="sobre-nosotros" className="py-20 md:py-32 px-6 relative overflow-hidden bg-white">
+            {/* Contenedor Principal */}
 
             <div className="container mx-auto max-w-7xl relative z-10">
                 <div className="text-center mb-16">
@@ -66,7 +63,7 @@ const About: React.FC = () => {
                     </div>
 
                     {/* Profile Card */}
-                    <div className="premium-card p-8 rounded-2xl card-hover flex flex-col" style={{ background: 'linear-gradient(145deg, #ffffff 0%, #FFF7ED 100%)', borderColor: 'rgba(249, 115, 22, 0.15)' }}>
+                    <div className="premium-card p-8 rounded-2xl card-hover flex flex-col bg-white border border-orange-100">
                         <div className="flex items-center justify-center mb-6">
                             <div className="w-16 h-16 rounded-full flex items-center justify-center bg-gradient-to-br from-indigo-500 to-purple-600 shadow-lg">
                                 <FaUserTie className="text-white text-3xl" />
