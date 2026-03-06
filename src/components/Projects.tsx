@@ -62,7 +62,7 @@ const Projects: React.FC = () => {
                         <div key={project.id} className="premium-card p-6 md:p-8 rounded-2xl card-hover flex flex-col h-full">
 
                             {/* Media Container */}
-                            <div className="relative rounded-xl mb-6 glow-cyan overflow-hidden bg-neutral-100 aspect-video flex items-center justify-center">
+                            <div className="relative rounded-xl mb-6 glow-cyan overflow-hidden bg-neutral-100 aspect-video min-h-[200px] sm:min-h-0 flex items-center justify-center">
                                 {project.videoUrl ? (
                                     <iframe
                                         className="w-full h-full absolute inset-0"
