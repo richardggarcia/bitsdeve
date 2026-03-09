@@ -51,15 +51,15 @@ const Projects: React.FC = () => {
     ];
 
     return (
-        <section id="proyectos" className="py-16 md:py-24 px-6 mx-4 my-8">
+        <section id="proyectos" className="py-12 md:py-24 px-4 md:px-6">
             <div className="container mx-auto max-w-7xl">
                 <h2 className="text-3xl md:text-5xl font-extrabold font-orbitron text-gradient text-center mb-16">
                     <FaProjectDiagram className="inline-block text-primary-blue mr-3 mb-2" /> Proyectos Destacados
                 </h2>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
                     {projects.map((project) => (
-                        <div key={project.id} className="premium-card p-6 md:p-8 rounded-2xl card-hover flex flex-col h-full">
+                        <div key={project.id} className="premium-card p-4 md:p-8 rounded-2xl card-hover flex flex-col h-full">
 
                             {/* Media Container */}
                             <div className="relative rounded-xl mb-6 glow-cyan overflow-hidden bg-neutral-100 aspect-video min-h-[200px] sm:min-h-0 flex items-center justify-center">

@@ -3,7 +3,7 @@ import { FaCheckCircle, FaLightbulb, FaUserTie, FaMapMarkerAlt, FaEnvelope } fro
 
 const About: React.FC = () => {
     return (
-        <section id="sobre-nosotros" className="py-20 md:py-32 px-6 relative overflow-hidden">
+        <section id="sobre-nosotros" className="py-12 md:py-32 px-4 md:px-6 relative overflow-hidden">
             {/* Contenedor Principal */}
 
             <div className="container mx-auto max-w-7xl relative z-10">
@@ -22,7 +22,7 @@ const About: React.FC = () => {
 
                 <div className="grid md:grid-cols-2 gap-8 items-stretch">
                     {/* Philosophy Card */}
-                    <div className="premium-card p-8 rounded-2xl card-hover flex flex-col bg-white" style={{ borderColor: 'rgba(51, 65, 85, 0.15)' }}>
+                    <div className="premium-card p-5 md:p-8 rounded-2xl card-hover flex flex-col bg-white" style={{ borderColor: 'rgba(51, 65, 85, 0.15)' }}>
                         <div className="flex items-center justify-center mb-6">
                             <div className="w-16 h-16 rounded-full flex items-center justify-center bg-gradient-to-br from-orange-400 to-amber-500 shadow-lg">
                                 <FaLightbulb className="text-white text-3xl" />
@@ -63,7 +63,7 @@ const About: React.FC = () => {
                     </div>
 
                     {/* Profile Card */}
-                    <div className="premium-card p-8 rounded-2xl card-hover flex flex-col bg-white border border-orange-100">
+                    <div className="premium-card p-5 md:p-8 rounded-2xl card-hover flex flex-col bg-white border border-orange-100">
                         <div className="flex items-center justify-center mb-6">
                             <div className="w-16 h-16 rounded-full flex items-center justify-center bg-gradient-to-br from-indigo-500 to-purple-600 shadow-lg">
                                 <FaUserTie className="text-white text-3xl" />

@@ -43,7 +43,7 @@ const Contact: React.FC = () => {
 
     return (
         <>
-            <section id="contacto" className="py-16 md:py-24 px-6 mx-4 my-8">
+            <section id="contacto" className="py-12 md:py-24 px-4 md:px-6">
                 <div className="container mx-auto max-w-4xl text-center">
                     <h2 className="text-3xl md:text-5xl font-extrabold font-orbitron text-gradient mb-12">
                         <FaPaperPlane className="inline-block text-orange-500 mr-3 mb-2" /> Contáctame
@@ -52,7 +52,7 @@ const Contact: React.FC = () => {
                         ¿Listo para transformar tu negocio con una solución web inteligente y automatizada? ¡Hablemos!
                     </p>
 
-                    <div className="glass-card p-8 rounded-2xl glow-cyan text-left">
+                    <div className="glass-card p-4 md:p-8 rounded-2xl glow-cyan text-left">
                         <form onSubmit={handleSubmit} className="space-y-6">
                             <div>
                                 <label htmlFor="name" className="block text-slate-700 text-base md:text-lg font-medium mb-2 font-orbitron">
