@@ -11,7 +11,9 @@ type Project = {
     link: string;
     repo?: string;
     videoUrl: string;
-    gradient: string;
+    accentClass: string;
+    previewClass: string;
+    label: string;
     ctaLabel?: string;
     privacyNote?: string;
 };
@@ -27,7 +29,9 @@ const Projects: React.FC = () => {
             tech: 'NestJS, React, TypeScript, MongoDB, Redis/BullMQ, Odoo, Fly.io, Vercel',
             link: 'https://hyperpc.cl',
             videoUrl: '',
-            gradient: 'from-slate-700 to-orange-500',
+            accentClass: 'text-orange-700 border-orange-200 bg-orange-50',
+            previewClass: 'bg-slate-950 text-orange-100',
+            label: 'Caso privado B2B',
             ctaLabel: 'Ver cliente',
             privacyNote: 'Proyecto privado: el desarrollo realizado fue el orquestador interno, no la tienda pública del cliente.'
         },
@@ -41,7 +45,9 @@ const Projects: React.FC = () => {
             link: 'https://experienzea.bitsdeve.com',
             repo: 'https://github.com/richardggarcia/experienzea',
             videoUrl: '', // No video available yet
-            gradient: 'from-blue-600 to-indigo-600'
+            accentClass: 'text-indigo-700 border-indigo-200 bg-indigo-50',
+            previewClass: 'bg-indigo-950 text-indigo-100',
+            label: 'Web3 / RWA'
         },
         {
             id: 3,
@@ -52,7 +58,9 @@ const Projects: React.FC = () => {
             tech: 'Node.js, React, Python, n8n, Cloudflare',
             link: 'https://www.miedoandcodicia.com',
             videoUrl: '', // Previous video was just for bot, updating to platform
-            gradient: 'from-orange-500 to-amber-500'
+            accentClass: 'text-amber-700 border-amber-200 bg-amber-50',
+            previewClass: 'bg-stone-950 text-amber-100',
+            label: 'Media automation'
         },
         {
             id: 4,
@@ -63,7 +71,9 @@ const Projects: React.FC = () => {
             tech: 'Node.js, MongoDB, JWT, React',
             link: 'https://www.lazosdevida.com',
             videoUrl: 'https://www.youtube.com/embed/LF_q8n493ik?rel=0&modestbranding=1&showinfo=0',
-            gradient: 'from-emerald-500 to-teal-500'
+            accentClass: 'text-teal-700 border-teal-200 bg-teal-50',
+            previewClass: 'bg-teal-950 text-teal-100',
+            label: 'SaaS B2B'
         },
         {
             id: 5,
@@ -74,7 +84,9 @@ const Projects: React.FC = () => {
             tech: 'Node.js, Express, MongoDB Atlas, React, MUI',
             link: 'https://www.facttech.io',
             videoUrl: 'https://www.youtube.com/embed/N7G3hvMxmS8?rel=0&modestbranding=1&showinfo=0',
-            gradient: 'from-blue-500 to-purple-500'
+            accentClass: 'text-sky-700 border-sky-200 bg-sky-50',
+            previewClass: 'bg-slate-900 text-sky-100',
+            label: 'ERP / CRM'
         }
     ];
 
@@ -87,10 +99,10 @@ const Projects: React.FC = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
                     {projects.map((project) => (
-                        <div key={project.id} className="premium-card p-4 md:p-8 rounded-2xl card-hover flex flex-col h-full">
+                        <div key={project.id} className="premium-card p-4 md:p-7 rounded-2xl card-hover flex flex-col h-full">
 
                             {/* Media Container */}
-                            <div className="relative rounded-xl mb-6 glow-cyan overflow-hidden bg-neutral-100 aspect-video min-h-[200px] sm:min-h-0 flex items-center justify-center">
+                            <div className="relative rounded-xl mb-6 overflow-hidden border border-slate-200 bg-neutral-100 aspect-video min-h-[200px] sm:min-h-0 flex items-center justify-center">
                                 {project.videoUrl ? (
                                     <iframe
                                         className="w-full h-full absolute inset-0"
@@ -101,16 +113,24 @@ const Projects: React.FC = () => {
                                         allowFullScreen
                                     ></iframe>
                                 ) : (
-                                    <div className={`w-full h-full absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-90 flex flex-col items-center justify-center text-white p-6 text-center`}>
-                                        <FaProjectDiagram className="text-6xl mb-4 opacity-50" />
-                                        <span className="font-orbitron font-bold text-2xl tracking-wider">{project.title}</span>
+                                    <div className={`w-full h-full absolute inset-0 ${project.previewClass} flex flex-col justify-between p-6`}>
+                                        <div className="flex items-center justify-between">
+                                            <span className={`rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] ${project.accentClass}`}>
+                                                {project.label}
+                                            </span>
+                                            <FaProjectDiagram className="text-2xl opacity-50" />
+                                        </div>
+                                        <div>
+                                            <span className="block font-orbitron text-2xl font-bold leading-tight">{project.title}</span>
+                                            <span className="mt-3 block h-px w-20 bg-current opacity-40" />
+                                        </div>
                                     </div>
                                 )}
                             </div>
 
                             {/* Content Container */}
                             <div className="flex-grow flex flex-col">
-                                <h3 className={`text-3xl font-bold font-orbitron mb-4 text-transparent bg-clip-text bg-gradient-to-r ${project.gradient}`}>
+                                <h3 className="text-2xl md:text-3xl font-bold font-orbitron mb-4 text-slate-900">
                                     {project.title}
                                 </h3>
 
