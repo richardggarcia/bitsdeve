@@ -1,10 +1,38 @@
 import React from 'react';
-import { FaGithub, FaExternalLinkAlt, FaProjectDiagram } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaLock, FaProjectDiagram } from 'react-icons/fa';
+
+type Project = {
+    id: number;
+    title: string;
+    type: string;
+    status: string;
+    features: string;
+    tech: string;
+    link: string;
+    repo?: string;
+    videoUrl: string;
+    gradient: string;
+    ctaLabel?: string;
+    privacyNote?: string;
+};
 
 const Projects: React.FC = () => {
-    const projects = [
+    const projects: Project[] = [
         {
             id: 1,
+            title: 'HyperPC Orchestrator',
+            type: 'Plataforma interna e-commerce / ERP / Marketplaces',
+            status: 'En producción',
+            features: 'Sincronización Odoo, actualización de stock, carga masiva, webhooks, dashboard operativo y control por marketplace',
+            tech: 'NestJS, React, TypeScript, MongoDB, Redis/BullMQ, Odoo, Fly.io, Vercel',
+            link: 'https://hyperpc.cl',
+            videoUrl: '',
+            gradient: 'from-slate-700 to-orange-500',
+            ctaLabel: 'Ver cliente',
+            privacyNote: 'Proyecto privado: el desarrollo realizado fue el orquestador interno, no la tienda pública del cliente.'
+        },
+        {
+            id: 2,
             title: 'ExperienZea',
             type: 'Defi / Web3 / RWA',
             status: 'En producción',
@@ -16,7 +44,7 @@ const Projects: React.FC = () => {
             gradient: 'from-blue-600 to-indigo-600'
         },
         {
-            id: 2,
+            id: 3,
             title: 'Miedo and Codicia',
             type: 'Plataforma Web - Cripto Noticias',
             status: 'En producción',
@@ -27,7 +55,7 @@ const Projects: React.FC = () => {
             gradient: 'from-orange-500 to-amber-500'
         },
         {
-            id: 3,
+            id: 4,
             title: 'LazosDeVida.com',
             type: 'Plataforma QR para memoriales',
             status: 'En producción',
@@ -38,7 +66,7 @@ const Projects: React.FC = () => {
             gradient: 'from-emerald-500 to-teal-500'
         },
         {
-            id: 4,
+            id: 5,
             title: 'FactTech.io',
             type: 'ERP/CRM Facturación Empresarial',
             status: 'En producción',
@@ -91,6 +119,12 @@ const Projects: React.FC = () => {
                                     <p><strong className="text-neutral-900">Estado:</strong> <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">{project.status}</span></p>
                                     <p><strong className="text-neutral-900">Funciones:</strong> {project.features}</p>
                                     <p><strong className="text-neutral-900">Stack:</strong> {project.tech}</p>
+                                    {project.privacyNote && (
+                                        <p className="flex items-start gap-2 rounded-xl border border-orange-200 bg-orange-50 px-3 py-2 text-sm text-orange-800">
+                                            <FaLock className="mt-0.5 flex-shrink-0" />
+                                            <span>{project.privacyNote}</span>
+                                        </p>
+                                    )}
                                 </div>
 
                                 {/* Actions */}
@@ -101,7 +135,7 @@ const Projects: React.FC = () => {
                                         rel="noreferrer"
                                         className="flex-1 btn-cyber text-center flex justify-center items-center gap-2 group"
                                     >
-                                        <span>Ver Proyecto</span>
+                                        <span>{project.ctaLabel ?? 'Ver Proyecto'}</span>
                                         <FaExternalLinkAlt className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                                     </a>
 

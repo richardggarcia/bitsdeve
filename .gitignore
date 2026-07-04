@@ -44,3 +44,4 @@ tmp_*
 # AI tooling
 .claude/
 .gemini/
+.vercel

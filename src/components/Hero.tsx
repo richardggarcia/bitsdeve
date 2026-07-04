@@ -99,7 +99,7 @@ const Hero: React.FC = () => {
                 {/* Trust Indicators - Updated for 2026 CV */}
                 <div className="grid grid-cols-3 gap-4 md:gap-8 mt-12 md:mt-16 text-center" role="complementary" aria-label="Métricas de experiencia">
                     <div className="flex flex-col items-center gap-1 md:gap-2">
-                        <span className="font-playfair text-3xl md:text-5xl font-bold text-gradient" aria-label="Más de 4 proyectos destacados">4+</span>
+                        <span className="font-playfair text-3xl md:text-5xl font-bold text-gradient" aria-label="Más de 5 proyectos destacados">5+</span>
                         <span className="font-poppins text-xs md:text-sm text-neutral-700 font-medium">Proyectos Destacados</span>
                     </div>
                     <div className="flex flex-col items-center gap-1 md:gap-2">
