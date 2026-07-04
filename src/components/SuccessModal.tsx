@@ -7,9 +7,9 @@ interface SuccessModalProps {
 
 const SuccessModal: React.FC<SuccessModalProps> = ({ onClose }) => {
     return (
-        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] flex items-center justify-center p-4" onClick={onClose}>
+        <div className="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-[100] flex items-center justify-center p-4" onClick={onClose}>
             <div
-                className="glass-card max-w-lg w-full p-8 rounded-2xl glow-cyan text-center transform transition-all duration-300 scale-100 bg-neutral-900 border border-cyan-500/30"
+                className="glass-card max-w-lg w-full p-8 rounded-2xl text-center transform transition-all duration-300 scale-100 bg-slate-950 border border-slate-700"
                 onClick={(e) => e.stopPropagation()}
             >
                 <button
@@ -19,32 +19,32 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ onClose }) => {
                     <FaTimes className="text-xl" />
                 </button>
 
-                <div className="text-6xl mb-4 text-cyan-400 flex justify-center mt-4">
+                <div className="text-6xl mb-4 text-orange-500 flex justify-center mt-4">
                     <FaRocket className="animate-bounce" />
                 </div>
 
-                <h3 className="text-2xl font-bold font-orbitron text-cyan-400 mb-4">¡Mensaje Enviado Exitosamente!</h3>
+                <h3 className="text-2xl font-bold font-orbitron text-orange-500 mb-4">Mensaje enviado exitosamente</h3>
                 <p className="text-neutral-300 mb-6 font-poppins">
                     He recibido tu consulta y te responderé pronto.
                     <br />Mientras tanto, revisa tu email para más detalles.
                 </p>
 
                 {/* Qué esperar */}
-                <div className="mb-6 p-4 bg-gradient-to-r from-purple-500/10 to-cyan-500/10 rounded-xl border border-cyan-400/20 text-left">
-                    <h4 className="text-cyan-300 font-semibold mb-3 font-orbitron">📧 ¿Qué sigue ahora?</h4>
+                <div className="mb-6 p-4 bg-slate-900 rounded-xl border border-slate-700 text-left">
+                    <h4 className="text-orange-400 font-semibold mb-3 font-orbitron">Qué sigue ahora</h4>
                     <div className="text-neutral-300 text-sm space-y-2 font-poppins">
-                        <p className="flex items-center gap-2"><span>✅</span> Recibirás un email de confirmación</p>
-                        <p className="flex items-center gap-2"><span>⚡</span> Respuesta en menos de 24 horas</p>
-                        <p className="flex items-center gap-2"><span>📅</span> Posible videollamada de 30 min (Meet/Zoom)</p>
+                        <p>Recibirás un email de confirmación.</p>
+                        <p>Respuesta en menos de 24 horas.</p>
+                        <p>Posible videollamada de 30 min por Meet o Zoom.</p>
                     </div>
                 </div>
 
                 {/* WhatsApp CTA */}
-                <div className="mb-8 p-4 bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded-xl border border-green-400/20">
-                    <p className="text-green-300 font-semibold mb-3 font-orbitron">💬 ¿Respuesta INMEDIATA?</p>
+                <div className="mb-8 p-4 bg-slate-900 rounded-xl border border-slate-700">
+                    <p className="text-orange-400 font-semibold mb-3 font-orbitron">Respuesta inmediata</p>
                     <a
                         href="https://wa.me/5491122517795?text=Hola%20Richard%2C%20envié%20un%20mensaje%20desde%20bitsdeve.com%20y%20me%20gustaría%20hablar%20contigo"
-                        className="inline-flex items-center justify-center gap-2 text-white bg-green-500 hover:bg-green-600 px-4 py-2 rounded-lg font-semibold font-poppins transition-colors w-full"
+                        className="inline-flex items-center justify-center gap-2 text-white bg-orange-600 hover:bg-orange-700 px-4 py-2 rounded-lg font-semibold font-poppins transition-colors w-full active:scale-[0.98]"
                         target="_blank"
                         rel="noreferrer"
                     >

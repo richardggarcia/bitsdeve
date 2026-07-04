@@ -48,10 +48,10 @@ const Navbar: React.FC = () => {
                     >
                         <div className="relative w-[50px] h-[50px]">
                             <Lottie animationData={chatbotAnimation} loop={true} />
-                            <div className="absolute inset-0 bg-gradient-to-r from-slate-500/20 to-orange-500/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div className="absolute inset-0 rounded-full border border-orange-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </div>
                         <div className="flex flex-col">
-                            <span className="text-xl font-black font-orbitron text-gradient tracking-tight">bitsdeve</span>
+                            <span className="text-xl font-black font-orbitron text-slate-950 tracking-tight">bitsdeve</span>
                         </div>
                     </a>
 
@@ -65,7 +65,7 @@ const Navbar: React.FC = () => {
                                 className="nav-link relative text-neutral-700 hover:text-neutral-900 transition-all duration-300 font-medium font-poppins px-4 py-2 rounded-xl hover:bg-slate-50 group"
                             >
                                 <span className="relative z-10">{link.label}</span>
-                                <div className="absolute inset-0 bg-gradient-to-r from-slate-500/10 to-orange-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                <div className="absolute inset-x-4 bottom-1 h-px bg-orange-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             </a>
                         ))}
 
@@ -73,7 +73,7 @@ const Navbar: React.FC = () => {
                         <a
                             href="#contacto"
                             onClick={(e) => scrollToSection(e, '#contacto')}
-                            className="ml-4 flex items-center bg-gradient-to-r from-orange-500 to-amber-500 text-white font-semibold px-6 py-2.5 rounded-full hover:from-orange-600 hover:to-amber-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 transform"
+                            className="ml-4 flex items-center bg-orange-600 text-white font-semibold px-6 py-2.5 rounded-full hover:bg-orange-700 transition-all duration-300 shadow-[0_12px_24px_-18px_rgba(234,88,12,0.8)] active:scale-[0.98]"
                         >
                             <FaRocket className="mr-2" /> Contactar
                         </a>
@@ -92,7 +92,7 @@ const Navbar: React.FC = () => {
 
             {/* Mobile Menu Overlay */}
             {isMobileMenuOpen && (
-                <div className="fixed inset-0 bg-gradient-to-br from-slate-800 to-slate-900 z-[60] flex flex-col items-center justify-center space-y-8 md:hidden">
+                <div className="fixed inset-0 bg-slate-950 z-[60] flex flex-col items-center justify-center space-y-8 md:hidden">
                     <button
                         onClick={closeMobileMenu}
                         className="absolute top-6 right-6 text-white hover:text-neutral-200 focus:outline-none focus:ring-2 focus:ring-white rounded-lg p-2"

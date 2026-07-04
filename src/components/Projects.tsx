@@ -45,8 +45,8 @@ const Projects: React.FC = () => {
             link: 'https://experienzea.bitsdeve.com',
             repo: 'https://github.com/richardggarcia/experienzea',
             videoUrl: '', // No video available yet
-            accentClass: 'text-indigo-700 border-indigo-200 bg-indigo-50',
-            previewClass: 'bg-indigo-950 text-indigo-100',
+            accentClass: 'text-orange-700 border-orange-200 bg-orange-50',
+            previewClass: 'bg-slate-950 text-orange-100',
             label: 'Web3 / RWA'
         },
         {
@@ -58,8 +58,8 @@ const Projects: React.FC = () => {
             tech: 'Node.js, React, Python, n8n, Cloudflare',
             link: 'https://www.miedoandcodicia.com',
             videoUrl: '', // Previous video was just for bot, updating to platform
-            accentClass: 'text-amber-700 border-amber-200 bg-amber-50',
-            previewClass: 'bg-stone-950 text-amber-100',
+            accentClass: 'text-orange-700 border-orange-200 bg-orange-50',
+            previewClass: 'bg-slate-950 text-orange-100',
             label: 'Media automation'
         },
         {
@@ -71,8 +71,8 @@ const Projects: React.FC = () => {
             tech: 'Node.js, MongoDB, JWT, React',
             link: 'https://www.lazosdevida.com',
             videoUrl: 'https://www.youtube.com/embed/LF_q8n493ik?rel=0&modestbranding=1&showinfo=0',
-            accentClass: 'text-teal-700 border-teal-200 bg-teal-50',
-            previewClass: 'bg-teal-950 text-teal-100',
+            accentClass: 'text-orange-700 border-orange-200 bg-orange-50',
+            previewClass: 'bg-slate-950 text-orange-100',
             label: 'SaaS B2B'
         },
         {
@@ -84,8 +84,8 @@ const Projects: React.FC = () => {
             tech: 'Node.js, Express, MongoDB Atlas, React, MUI',
             link: 'https://www.facttech.io',
             videoUrl: 'https://www.youtube.com/embed/N7G3hvMxmS8?rel=0&modestbranding=1&showinfo=0',
-            accentClass: 'text-sky-700 border-sky-200 bg-sky-50',
-            previewClass: 'bg-slate-900 text-sky-100',
+            accentClass: 'text-orange-700 border-orange-200 bg-orange-50',
+            previewClass: 'bg-slate-950 text-orange-100',
             label: 'ERP / CRM'
         }
     ];
@@ -93,7 +93,7 @@ const Projects: React.FC = () => {
     return (
         <section id="proyectos" className="py-12 md:py-24 px-4 md:px-6">
             <div className="container mx-auto max-w-7xl">
-                <h2 className="text-3xl md:text-5xl font-extrabold font-orbitron text-gradient text-center mb-16">
+                <h2 className="text-3xl md:text-5xl font-extrabold font-orbitron text-slate-950 text-center mb-16">
                     <FaProjectDiagram className="inline-block text-primary-blue mr-3 mb-2" /> Proyectos Destacados
                 </h2>
 
@@ -136,7 +136,7 @@ const Projects: React.FC = () => {
 
                                 <div className="space-y-3 mb-6 flex-grow font-poppins text-sm md:text-base text-neutral-700">
                                     <p><strong className="text-neutral-900">Tipo:</strong> {project.type}</p>
-                                    <p><strong className="text-neutral-900">Estado:</strong> <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">{project.status}</span></p>
+                                    <p><strong className="text-neutral-900">Estado:</strong> <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-50 text-orange-700 border border-orange-200">{project.status}</span></p>
                                     <p><strong className="text-neutral-900">Funciones:</strong> {project.features}</p>
                                     <p><strong className="text-neutral-900">Stack:</strong> {project.tech}</p>
                                     {project.privacyNote && (

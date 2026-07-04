@@ -45,14 +45,14 @@ const Contact: React.FC = () => {
         <>
             <section id="contacto" className="py-12 md:py-24 px-4 md:px-6">
                 <div className="container mx-auto max-w-4xl text-center">
-                    <h2 className="text-3xl md:text-5xl font-extrabold font-orbitron text-gradient mb-12">
+                    <h2 className="text-3xl md:text-5xl font-extrabold font-orbitron text-slate-950 mb-12">
                         <FaPaperPlane className="inline-block text-orange-500 mr-3 mb-2" /> Contáctame
                     </h2>
                     <p className="text-neutral-800 text-xl mb-8 font-poppins font-medium">
                         ¿Listo para transformar tu negocio con una solución web inteligente y automatizada? ¡Hablemos!
                     </p>
 
-                    <div className="glass-card p-4 md:p-8 rounded-2xl glow-cyan text-left">
+                    <div className="glass-card p-4 md:p-8 rounded-2xl text-left border border-slate-200 shadow-[0_16px_32px_rgba(15,23,42,0.08)]">
                         <form onSubmit={handleSubmit} className="space-y-6">
                             <div>
                                 <label htmlFor="name" className="block text-slate-700 text-base md:text-lg font-medium mb-2 font-orbitron">
@@ -112,7 +112,7 @@ const Contact: React.FC = () => {
                         </form>
 
                         <div className="mt-12 pt-8 border-t border-neutral-200 text-center">
-                            <h4 className="text-xl font-bold font-orbitron text-orange-600 mb-6">📞 Información de Contacto:</h4>
+                            <h4 className="text-xl font-bold font-orbitron text-orange-700 mb-6">Información de contacto</h4>
                             <div className="space-y-3 font-poppins text-lg text-neutral-700">
                                 <p>
                                     <strong className="text-neutral-900">Email:</strong>{' '}
@@ -133,13 +133,13 @@ const Contact: React.FC = () => {
                             <a href="https://github.com/richardggarcia" target="_blank" rel="noreferrer" className="text-neutral-600 hover:text-black transition-all duration-300 hover:scale-110">
                                 <FaGithub />
                             </a>
-                            <a href="https://www.linkedin.com/in/richardgarciac/" target="_blank" rel="noreferrer" className="text-neutral-600 hover:text-blue-700 transition-all duration-300 hover:scale-110">
+                            <a href="https://www.linkedin.com/in/richardgarciac/" target="_blank" rel="noreferrer" className="text-neutral-600 hover:text-orange-700 transition-all duration-300 hover:scale-110">
                                 <FaLinkedin />
                             </a>
-                            <a href="https://twitter.com/richardg646" target="_blank" rel="noreferrer" className="text-neutral-600 hover:text-sky-500 transition-all duration-300 hover:scale-110">
+                            <a href="https://twitter.com/richardg646" target="_blank" rel="noreferrer" className="text-neutral-600 hover:text-orange-700 transition-all duration-300 hover:scale-110">
                                 <FaTwitter />
                             </a>
-                            <a href="https://instagram.com/rggc646" target="_blank" rel="noreferrer" className="text-neutral-600 hover:text-pink-600 transition-all duration-300 hover:scale-110">
+                            <a href="https://instagram.com/rggc646" target="_blank" rel="noreferrer" className="text-neutral-600 hover:text-orange-700 transition-all duration-300 hover:scale-110">
                                 <FaInstagram />
                             </a>
                         </div>

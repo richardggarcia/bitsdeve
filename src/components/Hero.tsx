@@ -14,13 +14,13 @@ const Hero: React.FC = () => {
     };
 
     const techBadges = [
-        { text: '⚛️ React/Next.js', delay: '0s', pos: 'top-[5%] left-[-5%] max-md:hidden' },
-        { text: '🚀 Node.js', delay: '0.4s', pos: 'top-[5%] right-[-5%] max-md:hidden' },
-        { text: '🔥 Supabase', delay: '0.8s', pos: 'top-[40%] left-[-15%] max-md:hidden' },
-        { text: '🤖 IA/LLMs', delay: '1.2s', pos: 'top-[35%] right-[-15%] max-md:hidden' },
-        { text: '📘 TypeScript', delay: '1.6s', pos: 'top-[65%] right-[-10%] max-md:hidden' },
-        { text: '⛓️ Stellar', delay: '2.0s', pos: 'top-[75%] left-[-10%] max-md:hidden' },
-        { text: '🐍 Python', delay: '2.4s', pos: 'top-[95%] right-[5%] max-md:hidden' },
+        { text: 'React/Next.js', delay: '0s', pos: 'top-[5%] left-[-5%] max-md:hidden' },
+        { text: 'Node.js', delay: '0.4s', pos: 'top-[5%] right-[-5%] max-md:hidden' },
+        { text: 'Supabase', delay: '0.8s', pos: 'top-[40%] left-[-15%] max-md:hidden' },
+        { text: 'IA/LLMs', delay: '1.2s', pos: 'top-[35%] right-[-15%] max-md:hidden' },
+        { text: 'TypeScript', delay: '1.6s', pos: 'top-[65%] right-[-10%] max-md:hidden' },
+        { text: 'Stellar', delay: '2.0s', pos: 'top-[75%] left-[-10%] max-md:hidden' },
+        { text: 'Python', delay: '2.4s', pos: 'top-[95%] right-[5%] max-md:hidden' },
     ];
 
     return (
@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
                     <div className="text-center lg:text-left">
                         <h1 id="hero-title" className="mb-6">
                             <span className="block font-orbitron text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter text-neutral-900 mb-2">bitsdeve</span>
-                            <span className="block font-poppins text-xl md:text-2xl lg:text-3xl font-semibold text-gradient">
+                            <span className="block font-poppins text-xl md:text-2xl lg:text-3xl font-semibold text-slate-700">
                                 Desarrollo Web Estratégico con Inteligencia Artificial
                             </span>
                         </h1>
@@ -72,7 +72,7 @@ const Hero: React.FC = () => {
                             {techBadges.map((badge, idx) => (
                                 <div
                                     key={idx}
-                                    className={`absolute bg-slate-700/10 backdrop-blur-md border border-slate-600/20 text-slate-700 px-4 py-2 rounded-full text-sm font-semibold font-poppins animate-float ${badge.pos}`}
+                                    className={`absolute bg-white border border-slate-200 text-slate-700 px-4 py-2 rounded-full text-sm font-semibold font-poppins shadow-sm animate-float ${badge.pos}`}
                                     style={{ animationDelay: badge.delay }}
                                     aria-hidden="true"
                                 >
@@ -86,7 +86,7 @@ const Hero: React.FC = () => {
                             {techBadges.slice(0, 4).map((badge, idx) => (
                                 <span
                                     key={idx}
-                                    className="bg-slate-700/10 backdrop-blur-md border border-slate-600/20 text-slate-700 px-3 py-1.5 rounded-full text-xs font-semibold font-poppins"
+                                    className="bg-white border border-slate-200 text-slate-700 px-3 py-1.5 rounded-full text-xs font-semibold font-poppins shadow-sm"
                                 >
                                     {badge.text}
                                 </span>
@@ -99,15 +99,15 @@ const Hero: React.FC = () => {
                 {/* Trust Indicators - Updated for 2026 CV */}
                 <div className="grid grid-cols-3 gap-4 md:gap-8 mt-12 md:mt-16 text-center" role="complementary" aria-label="Métricas de experiencia">
                     <div className="flex flex-col items-center gap-1 md:gap-2">
-                        <span className="font-playfair text-3xl md:text-5xl font-bold text-gradient" aria-label="Más de 5 proyectos destacados">5+</span>
+                        <span className="font-playfair text-3xl md:text-5xl font-bold text-orange-700" aria-label="Más de 5 proyectos destacados">5+</span>
                         <span className="font-poppins text-xs md:text-sm text-neutral-700 font-medium">Proyectos Destacados</span>
                     </div>
                     <div className="flex flex-col items-center gap-1 md:gap-2">
-                        <span className="font-playfair text-3xl md:text-5xl font-bold text-gradient" aria-label="Más de 3 años de experiencia">3+</span>
+                        <span className="font-playfair text-3xl md:text-5xl font-bold text-orange-700" aria-label="Más de 3 años de experiencia">3+</span>
                         <span className="font-poppins text-xs md:text-sm text-neutral-700 font-medium">Años de Experiencia</span>
                     </div>
                     <div className="flex flex-col items-center gap-1 md:gap-2">
-                        <span className="font-playfair text-2xl md:text-5xl font-bold text-gradient" aria-label="Soluciones Web3 y LLMs">Web3 & IA</span>
+                        <span className="font-playfair text-2xl md:text-5xl font-bold text-orange-700" aria-label="Soluciones Web3 y LLMs">Web3 & IA</span>
                         <span className="font-poppins text-xs md:text-sm text-neutral-700 font-medium">Integraciones Avanzadas</span>
                     </div>
                 </div>
