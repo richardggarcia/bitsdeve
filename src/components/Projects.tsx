@@ -99,10 +99,10 @@ const Projects: React.FC = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
                     {projects.map((project) => (
-                        <div key={project.id} className="premium-card p-4 md:p-7 rounded-2xl card-hover flex flex-col h-full">
+                        <div key={project.id} className="premium-card p-3.5 md:p-7 rounded-2xl card-hover flex flex-col h-full">
 
                             {/* Media Container */}
-                            <div className="relative rounded-xl mb-6 overflow-hidden border border-slate-200 bg-neutral-100 aspect-video min-h-[200px] sm:min-h-0 flex items-center justify-center">
+                            <div className="relative rounded-xl mb-5 md:mb-6 overflow-hidden border border-slate-200 bg-neutral-100 aspect-video min-h-[160px] sm:min-h-0 flex items-center justify-center">
                                 {project.videoUrl ? (
                                     <iframe
                                         className="w-full h-full absolute inset-0"
@@ -113,7 +113,7 @@ const Projects: React.FC = () => {
                                         allowFullScreen
                                     ></iframe>
                                 ) : (
-                                    <div className={`w-full h-full absolute inset-0 ${project.previewClass} flex flex-col justify-between p-6`}>
+                                    <div className={`w-full h-full absolute inset-0 ${project.previewClass} flex flex-col justify-between p-5 md:p-6`}>
                                         <div className="flex items-center justify-between">
                                             <span className={`rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] ${project.accentClass}`}>
                                                 {project.label}
@@ -121,7 +121,7 @@ const Projects: React.FC = () => {
                                             <FaProjectDiagram className="text-2xl opacity-50" />
                                         </div>
                                         <div>
-                                            <span className="block font-orbitron text-2xl font-bold leading-tight">{project.title}</span>
+                                            <span className="block font-orbitron text-xl md:text-2xl font-bold leading-tight">{project.title}</span>
                                             <span className="mt-3 block h-px w-20 bg-current opacity-40" />
                                         </div>
                                     </div>
@@ -130,11 +130,11 @@ const Projects: React.FC = () => {
 
                             {/* Content Container */}
                             <div className="flex-grow flex flex-col">
-                                <h3 className="text-2xl md:text-3xl font-bold font-orbitron mb-4 text-slate-900">
+                                <h3 className="text-xl md:text-3xl font-bold font-orbitron mb-4 text-slate-900">
                                     {project.title}
                                 </h3>
 
-                                <div className="space-y-3 mb-6 flex-grow font-poppins text-neutral-700">
+                                <div className="space-y-3 mb-6 flex-grow font-poppins text-sm md:text-base text-neutral-700">
                                     <p><strong className="text-neutral-900">Tipo:</strong> {project.type}</p>
                                     <p><strong className="text-neutral-900">Estado:</strong> <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">{project.status}</span></p>
                                     <p><strong className="text-neutral-900">Funciones:</strong> {project.features}</p>
