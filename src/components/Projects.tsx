@@ -82,7 +82,7 @@ const Projects: React.FC = () => {
             status: 'En producción',
             features: 'Gestión multi-tenant, reportes financieros PDF, WebSockets',
             tech: 'Node.js, Express, MongoDB Atlas, React, MUI',
-            link: 'https://www.facttech.io',
+            link: 'https://fact.bitsdeve.com',
             videoUrl: 'https://www.youtube.com/embed/N7G3hvMxmS8?rel=0&modestbranding=1&showinfo=0',
             accentClass: 'text-orange-700 border-orange-200 bg-orange-50',
             previewClass: 'bg-slate-950 text-orange-100',
