@@ -56,7 +56,7 @@ const Projects: React.FC = () => {
             status: 'En producción',
             features: 'Agregación de noticias, LLMs con Fallback (Groq, OpenAI), Workflows n8n, Bots Telegram',
             tech: 'Node.js, React, Python, n8n, Cloudflare',
-            link: 'https://www.miedoandcodicia.com',
+            link: 'https://miedoandcodicia.bitsdeve.com',
             videoUrl: '', // Previous video was just for bot, updating to platform
             accentClass: 'text-orange-700 border-orange-200 bg-orange-50',
             previewClass: 'bg-slate-950 text-orange-100',
