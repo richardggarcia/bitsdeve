@@ -179,10 +179,10 @@ export const stations: Station[] = [
 export const stackGroups: { name: string; items: string[] }[] = [
     { name: 'Frontend', items: ['React y Next.js', 'TypeScript y JavaScript', 'Tailwind CSS y Framer Motion', 'HTML5 y CSS3'] },
     { name: 'Backend y APIs', items: ['Node.js y Express', 'Next.js API Routes', 'Automatización con Python', 'APIs REST y WebSockets'] },
-    { name: 'IA y LLMs', items: ['OpenRouter y OpenAI', 'APIs de Groq', 'Fallback entre modelos', 'Clasificación y procesamiento NLP'] },
+    { name: 'IA y agentes', items: ['Agentes de código: Codex y Claude (Opus, Fable)', 'Agentes autónomos que redactan, editan y publican', 'Modelos en la nube y locales, con respaldo entre proveedores', 'Voz clonada y video generado por código'] },
     { name: 'Web3 y blockchain', items: ['Stellar Network', 'Smart contracts en Soroban (Rust)', 'Trustless Work Escrow', 'Tokens USDC y RWA'] },
     { name: 'Datos e infraestructura', items: ['Supabase y PostgreSQL', 'MongoDB Atlas y Firebase', 'Cloudflare R2 y Tunnels', 'Vercel y self-hosting'] },
-    { name: 'Automatización', items: ['Cloudflare Workers y cron jobs', 'Bots de Telegram en Python', 'Integración de APIs de terceros', 'Agregación de datos serverless'] },
+    { name: 'Automatización', items: ['Cloudflare Workers y cron jobs', 'Bots de Telegram en Python', 'Integración de APIs de terceros', 'Agentes que publican en redes sin intervención'] },
 ];
 
 export const contact = {

@@ -74,7 +74,7 @@ function AboutBody({ onSelect }: { onSelect: Select }) {
                     <ul className="ficha-list">
                         <li>Interfaces con React y TypeScript</li>
                         <li>Backends y APIs que escalan</li>
-                        <li>IA en producción (OpenRouter, OpenAI)</li>
+                        <li>Agentes de IA en producción</li>
                         <li>Automatización con n8n y blockchain en Stellar</li>
                     </ul>
                 </Field>
