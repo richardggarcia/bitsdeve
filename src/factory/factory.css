@@ -264,6 +264,10 @@
   text-transform: uppercase;
   color: var(--muted);
 }
+/* Etiquetas largas (Infraestructura, Automatización): van arriba de su lista, no al lado. */
+.ficha-fields.is-stacked .ficha-field { grid-template-columns: 1fr; gap: 6px; padding: 14px 0; }
+.ficha-fields.is-stacked .ficha-field dt { padding-top: 0; color: var(--ink); font-weight: 500; }
+.ficha-field dt { overflow-wrap: anywhere; }
 .ficha-field a { text-decoration: underline; text-underline-offset: 3px; }
 .ficha-field a:hover { color: var(--ink); }
 .ficha-list li { position: relative; padding-left: 14px; }

@@ -92,7 +92,7 @@ function StackBody() {
     return (
         <>
             <p className="ficha-lead">Las herramientas con las que trabajo, ordenadas por área.</p>
-            <dl className="ficha-fields">
+            <dl className="ficha-fields is-stacked">
                 {stackGroups.map((g) => (
                     <Field key={g.name} label={g.name}>
                         <ul className="ficha-list">
