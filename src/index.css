@@ -21,7 +21,7 @@
   }
 
   body {
-    @apply font-poppins text-neutral-800 antialiased min-h-screen;
+    @apply text-neutral-800 antialiased min-h-screen;
     background: #FFFFFF;
     line-height: 1.6;
   }
@@ -210,4 +210,16 @@
   .animate-float {
     animation: none;
   }
+}
+
+.boot {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  background: #FFFFFF;
+  color: #3A3F46;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
