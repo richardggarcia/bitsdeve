@@ -322,6 +322,87 @@ export function Facturadora() {
     );
 }
 
+/* Agentes: una redacción en cadena. Investiga, escribe, revisa el jefe y publica. */
+function Robot({ x, head, big = false, armRef }: { x: number; head: THREE.Material; big?: boolean; armRef?: React.Ref<THREE.Group> }) {
+    const k = big ? 1.25 : 1;
+    return (
+        <group position={[x, 0, -0.75]} scale={k}>
+            <Box p={[0, 0.25, 0]} s={[0.5, 0.5, 0.45]} m={M.slateLight} />
+            <Box p={[0, 0.82, 0]} s={[0.5, 0.6, 0.38]} m={big ? M.dark : M.slate} />
+            <Box p={[0, 1.34, 0]} s={[0.46, 0.38, 0.38]} m={head} />
+            <Ball p={[-0.1, 1.37, 0.2]} rad={0.045} m={M.dark} />
+            <Ball p={[0.1, 1.37, 0.2]} rad={0.045} m={M.dark} />
+            <Cyl p={[0, 1.63, 0]} rad={0.015} h={0.2} m={M.steel} />
+            <Ball p={[0, 1.75, 0]} rad={0.04} m={big ? M.lampAmber : M.lampGreen} />
+            <group ref={armRef} position={[0.3, 1.0, 0.1]}>
+                <Box p={[0, -0.05, 0.22]} s={[0.1, 0.1, 0.5]} m={M.steel} />
+            </group>
+            <Box p={[-0.3, 0.9, 0.3]} s={[0.1, 0.1, 0.5]} m={M.steel} />
+        </group>
+    );
+}
+
+export function Agentes() {
+    const N = 5;
+    const cards = useRef<(THREE.Mesh | null)[]>([]);
+    const arms = useRef<(THREE.Group | null)[]>([]);
+    const stamp = useRef<THREE.Group>(null);
+    const ok = useRef<THREE.Mesh>(null);
+
+    useTick((t) => {
+        let atBoss = false;
+        for (let i = 0; i < N; i++) {
+            const c = cards.current[i];
+            if (!c) continue;
+            const u = (t * 0.07 + i / N) % 1;
+            if (u < 0.8) {
+                const x = -3 + (u / 0.8) * 5.3;
+                c.position.set(x, 0.63, 0);
+                c.rotation.z = 0;
+                c.scale.set(0.36, 0.02, 0.26).multiplyScalar(Math.min(1, u * 20));
+                if (Math.abs(x - 1.55) < 0.22) atBoss = true;
+            } else {
+                const v = (u - 0.8) / 0.2;
+                c.position.set(2.3 + v * 1.5, 0.63 + v * 2.8, 0);
+                c.rotation.z = 0.9;
+                c.scale.set(0.36, 0.02, 0.26).multiplyScalar(1 - v * 0.7);
+            }
+        }
+        arms.current.forEach((a, i) => { if (a) a.rotation.x = Math.sin(t * 9 + i * 2) * 0.18; });
+        if (stamp.current) stamp.current.rotation.x = atBoss ? 0.35 : -0.25;
+        if (ok.current) ok.current.material = atBoss ? M.lampGreen : M.dark;
+    });
+
+    return (
+        <group>
+            <Box p={[-0.35, 0.55, 0]} s={[5.5, 0.1, 0.5]} m={M.belt} />
+            {[-2.9, -1.2, 0.5, 2.2].map((x) => [-0.2, 0.2].map((z) => (
+                <Box key={`${x}${z}`} p={[x, 0.25, z]} s={[0.08, 0.5, 0.08]} m={M.steel} />
+            )))}
+            <Box p={[-0.35, 0.6, 0.27]} s={[5.5, 0.14, 0.05]} m={M.slate} />
+
+            <Robot x={-2.4} head={M.cat} armRef={(el) => { arms.current[0] = el; }} />
+            <Robot x={-1.2} head={M.cream} armRef={(el) => { arms.current[1] = el; }} />
+            <Robot x={0} head={M.cat} armRef={(el) => { arms.current[2] = el; }} />
+
+            {/* El jefe, en su tarima, con sello y luz de aprobado */}
+            <Box p={[1.55, 0.08, -0.85]} s={[1.1, 0.16, 1]} m={M.cat} />
+            <group position={[0, 0.16, 0]}>
+                <Robot x={1.55} head={M.cream} big armRef={stamp} />
+            </group>
+            <Box mref={ok} p={[1.55, 0.72, 0.3]} s={[0.5, 0.06, 0.04]} m={M.dark} shadow={false} />
+
+            {/* Salida: la rampa por la que sale lo publicado */}
+            <Box p={[2.75, 0.75, 0]} s={[1.1, 0.06, 0.5]} r={[0, 0, 0.9]} m={M.cat} />
+            <Box p={[2.55, 0.3, 0]} s={[0.5, 0.6, 0.6]} m={M.slate} />
+
+            {Array.from({ length: N }, (_, i) => (
+                <Box key={i} mref={(el) => { cards.current[i] = el; }} m={M.paper} />
+            ))}
+        </group>
+    );
+}
+
 /* 06 · Perfil: la cabina de control y su operador */
 export function Cabina() {
     const arm = useRef<THREE.Group>(null);

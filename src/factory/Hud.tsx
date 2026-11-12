@@ -15,7 +15,7 @@ function Field({ label, children }: { label: string; children: React.ReactNode }
     );
 }
 
-function ProjectBody({ st }: { st: ProjectStation }) {
+function ProjectBody({ st, onSelect }: { st: ProjectStation; onSelect: Select }) {
     return (
         <>
             <p className="ficha-lead">{st.summary}</p>
@@ -34,13 +34,18 @@ function ProjectBody({ st }: { st: ProjectStation }) {
             </dl>
             {st.note && <p className="ficha-note">{st.note}</p>}
             <div className="ficha-actions">
-                <a className="btn-plate is-primary" href={st.link} target="_blank" rel="noreferrer">
-                    {st.cta ?? 'Ver proyecto'} <FaExternalLinkAlt aria-hidden />
-                </a>
+                {st.link && (
+                    <a className="btn-plate is-primary" href={st.link} target="_blank" rel="noreferrer">
+                        {st.cta ?? 'Ver proyecto'} <FaExternalLinkAlt aria-hidden />
+                    </a>
+                )}
                 {st.video && (
                     <a className="btn-plate" href={st.video} target="_blank" rel="noreferrer">
                         <FaPlay aria-hidden /> Demo en video
                     </a>
+                )}
+                {!st.link && (
+                    <button type="button" className="btn-plate is-primary" onClick={() => onSelect('contacto')}>Quiero uno así</button>
                 )}
                 {st.repo && (
                     <a className="btn-plate" href={st.repo} target="_blank" rel="noreferrer">
@@ -191,7 +196,7 @@ function Ficha({ st, index, onSelect }: { st: Station; index: number; onSelect: 
             <p className="ficha-machine">{st.machine}</p>
             <h2 id="ficha-title" className="ficha-title">{st.title}</h2>
 
-            {st.kind === 'project' && <ProjectBody st={st} />}
+            {st.kind === 'project' && <ProjectBody st={st} onSelect={onSelect} />}
             {st.kind === 'about' && <AboutBody onSelect={onSelect} />}
             {st.kind === 'stack' && <StackBody />}
             {st.kind === 'contact' && <ContactBody />}
@@ -225,7 +230,7 @@ export default function Hud({ active, onSelect }: { active: string | null; onSel
 
             {!st && (
                 <section className="hud-intro">
-                    <p className="hud-kicker">Sala de máquinas · 5 proyectos en producción</p>
+                    <p className="hud-kicker">Sala de máquinas · todo lo que ves está funcionando</p>
                     <h1>Software que mueve la operación de un negocio.</h1>
                     <p className="hud-lead">
                         Soy Richard García, desarrollador full stack. Cada máquina de esta sala es un proyecto

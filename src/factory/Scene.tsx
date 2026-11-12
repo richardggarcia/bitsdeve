@@ -3,7 +3,7 @@ import { Canvas, useThree } from '@react-three/fiber';
 import { CameraControls, Html, useCursor } from '@react-three/drei';
 import { Box, M, motion } from './kit';
 import { stations, type Station } from './stations';
-import { Almacen, Buzon, Cabina, Facturadora, Grabadora, Orquestador, Radar, Room, Rotativa } from './Machines';
+import { Agentes, Almacen, Buzon, Cabina, Facturadora, Grabadora, Orquestador, Radar, Room, Rotativa } from './Machines';
 
 const builders: Record<string, () => JSX.Element> = {
     orquestador: Orquestador,
@@ -11,6 +11,7 @@ const builders: Record<string, () => JSX.Element> = {
     rotativa: Rotativa,
     grabadora: Grabadora,
     facturadora: Facturadora,
+    agentes: Agentes,
     perfil: Cabina,
     stack: Almacen,
     contacto: Buzon,

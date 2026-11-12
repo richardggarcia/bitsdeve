@@ -22,7 +22,7 @@ export type ProjectStation = Base & {
     summary: string;
     features: string[];
     stack: string[];
-    link: string;
+    link?: string;
     cta?: string;
     repo?: string;
     video?: string;
@@ -97,10 +97,10 @@ export const stations: Station[] = [
         type: 'Plataforma web de noticias cripto',
         status: 'En producción',
         summary:
-            'La rotativa no para: junta noticias de varias fuentes, las pasa por modelos de lenguaje con respaldo entre proveedores y las publica en la web y en Telegram.',
+            'La rotativa no para: junta noticias de varias fuentes, las redacta con IA y las publica en la web y en Telegram.',
         features: [
             'Agregación de noticias',
-            'LLMs con fallback (Groq, OpenAI)',
+            'Redacción con IA',
             'Workflows en n8n',
             'Bots de Telegram',
         ],
@@ -142,6 +142,28 @@ export const stations: Station[] = [
         stack: ['Node.js', 'Express', 'MongoDB Atlas', 'React', 'MUI'],
         link: 'https://fact.bitsdeve.com',
         video: 'https://www.youtube.com/watch?v=N7G3hvMxmS8',
+    },
+    {
+        id: 'agentes',
+        kind: 'project',
+        machine: 'Línea de agentes',
+        pos: [1.6, 0, 6.3],
+        labelH: 3.1,
+        dist: 10.5,
+        pad: [7.6, 2.8],
+        title: 'Redacción autónoma',
+        type: 'Equipo de agentes de IA que publica en redes',
+        status: 'En operación',
+        summary:
+            'Cuatro agentes trabajan en cadena, como una redacción: uno investiga, otro escribe, un jefe revisa cada borrador y el último publica. La cuenta se mantiene activa sin que nadie tenga que escribir.',
+        features: [
+            'Investigador: busca y verifica el tema',
+            'Editor: redacta y corrige',
+            'Jefe: aprueba o devuelve el borrador',
+            'Publicador: lo sube a X',
+        ],
+        stack: ['Agentes de IA', 'Orquestación multiagente', 'X (Twitter)'],
+        note: 'Lo que ves es una simulación del flujo. Se adapta al tono y a los temas de cada cuenta.',
     },
     {
         id: 'perfil',

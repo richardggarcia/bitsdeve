@@ -59,7 +59,7 @@ export default function Factory() {
                                 <p>{s.type}. {s.status}.</p>
                                 <p>{s.summary}</p>
                                 <p>{s.features.join(', ')}. Stack: {s.stack.join(', ')}.</p>
-                                <a href={s.link}>{s.title}</a>
+                                {s.link && <a href={s.link}>{s.title}</a>}
                             </>
                         )}
                         {s.kind === 'stack' && stackGroups.map((g) => <p key={g.name}>{g.name}: {g.items.join(', ')}.</p>)}
