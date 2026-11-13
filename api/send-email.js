@@ -1,46 +1,65 @@
 // ============================================
 // FUNCIÓN AUXILIAR: Generar HTML del Email
 // ============================================
-const createEmailHtml = ({ name, email, message }) => `
-  <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #0A0A0A; color: #FFFFFF; padding: 20px; border-radius: 10px;">
-    <div style="text-align: center; margin-bottom: 30px;">
-      <h1 style="color: #00FFFF; font-size: 28px; margin: 0;">🚀 bitsdeve</h1>
-      <p style="color: #CCCCCC; margin: 5px 0;">Nuevo proyecto desde el formulario web</p>
-    </div>
+// Lo que escribe el visitante se muestra como texto, nunca como HTML.
+const escapeHtml = (value) =>
+  String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
 
-    <div style="background: rgba(17, 17, 17, 0.6); padding: 25px; border-radius: 10px; border: 1px solid rgba(0, 255, 255, 0.2);">
-      <h2 style="color: #00FFFF; margin-top: 0;">📧 Detalles del Cliente</h2>
+const FONT = "'Helvetica Neue', Helvetica, Arial, sans-serif";
+const MONO = "'SFMono-Regular', Menlo, Consolas, monospace";
 
-      <div style="margin: 15px 0;">
-        <strong style="color: #00FFFF;">👤 Nombre:</strong>
-        <span style="color: #FFFFFF; margin-left: 10px; font-size: 18px;">${name}</span>
-      </div>
+const label = (text) =>
+  `<p style="margin:0 0 6px;font-family:${MONO};font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#6B7075;">${text}</p>`;
 
-      <div style="margin: 15px 0;">
-        <strong style="color: #00FFFF;">📩 Email:</strong>
-        <span style="color: #FFFFFF; margin-left: 10px; font-size: 18px;">${email}</span>
-      </div>
+// Misma identidad que el sitio: blanco, negro y amarillo, sin adornos.
+const createEmailHtml = ({ name, email, message }) => {
+  const safeName = escapeHtml(name);
+  const safeEmail = escapeHtml(email);
+  const safeMessage = escapeHtml(message).replace(/\n/g, '<br>');
 
-      <div style="margin: 20px 0;">
-        <strong style="color: #00FFFF;">💬 Mensaje:</strong>
-        <div style="background: rgba(0, 0, 0, 0.3); padding: 15px; border-radius: 8px; margin-top: 10px; border-left: 3px solid #00FFFF;">
-          <p style="color: #FFFFFF; margin: 0; line-height: 1.6; font-size: 16px;">${message.replace(/\n/g, '<br>')}</p>
-        </div>
-      </div>
-    </div>
-
-    <div style="text-align: center; margin-top: 25px; padding: 20px; background: rgba(0, 255, 255, 0.1); border-radius: 8px;">
-      <p style="color: #00FFFF; margin: 0; font-weight: bold;">💡 Acciones recomendadas:</p>
-      <p style="color: #CCCCCC; margin: 5px 0;">• Responder este email (va directo a ${email})</p>
-      <p style="color: #CCCCCC; margin: 5px 0;">• WhatsApp: "Hola ${name}, recibí tu consulta..."</p>
-      <p style="color: #CCCCCC; margin: 5px 0;">• Coordinar Google Meet de 30 min</p>
-    </div>
-
-    <div style="text-align: center; margin-top: 20px; color: #666;">
-      <p style="margin: 0;">© 2024 bitsdeve.com</p>
-    </div>
-  </div>
+  return `
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F2F3F4;padding:24px 12px;">
+    <tr>
+      <td align="center">
+        <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:100%;max-width:600px;background:#FFFFFF;border:1px solid #17191C;">
+          <tr>
+            <td style="background:#17191C;padding:20px 28px;border-bottom:6px solid #FFCD11;">
+              <p style="margin:0;font-family:${FONT};font-size:22px;font-weight:700;letter-spacing:0.5px;color:#FFFFFF;">bitsdeve</p>
+              <p style="margin:4px 0 0;font-family:${MONO};font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#FFCD11;">Buzón de contacto · mensaje nuevo</p>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:28px 28px 8px;">
+              ${label('Nombre')}
+              <p style="margin:0 0 22px;font-family:${FONT};font-size:20px;font-weight:700;color:#17191C;">${safeName}</p>
+              ${label('Correo')}
+              <p style="margin:0 0 22px;font-family:${FONT};font-size:16px;"><a href="mailto:${safeEmail}" style="color:#17191C;">${safeEmail}</a></p>
+              ${label('Mensaje')}
+              <div style="margin:0 0 24px;padding:16px 18px;background:#F7F7F8;border-left:4px solid #FFCD11;font-family:${FONT};font-size:16px;line-height:1.6;color:#17191C;">${safeMessage}</div>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 28px 28px;">
+              <a href="mailto:${safeEmail}" style="display:inline-block;background:#FFCD11;color:#17191C;font-family:${FONT};font-size:15px;font-weight:700;text-decoration:none;padding:12px 22px;border:1px solid #17191C;">Responder a ${safeName}</a>
+              <p style="margin:14px 0 0;font-family:${FONT};font-size:13px;color:#6B7075;">También puedes responder este correo: la respuesta le llega directo.</p>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:14px 28px;border-top:1px solid #E3E5E7;font-family:${MONO};font-size:11px;color:#6B7075;">
+              Enviado desde el formulario de bitsdeve.com
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
 `;
+};
 
 // ============================================
 // HANDLER PRINCIPAL DE LA FUNCIÓN SERVERLESS
@@ -83,7 +102,7 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         from: process.env.FROM_EMAIL || 'contacto@bitsdeve.com',
         to: process.env.TO_EMAIL || 'richardgg646@gmail.com',
-        subject: `🚀 Nuevo proyecto de ${name} - bitsdeve.com`,
+        subject: `Mensaje nuevo de ${name} · bitsdeve.com`,
         html: createEmailHtml({ name, email, message }),
         reply_to: email
       })
