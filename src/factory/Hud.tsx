@@ -113,6 +113,9 @@ function StackBody() {
 function ContactBody() {
     const [form, setForm] = useState({ name: '', email: '', message: '' });
     const [state, setState] = useState<'idle' | 'sending' | 'ok' | 'error'>('idle');
+    // Filtro antibots: una casilla que las personas no ven y el tiempo que tardan en escribir.
+    const [trap, setTrap] = useState('');
+    const openedAt = useRef(Date.now());
 
     const change = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
         setForm({ ...form, [e.target.name]: e.target.value });
@@ -124,7 +127,7 @@ function ContactBody() {
             const res = await fetch('/api/send-email', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(form),
+                body: JSON.stringify({ ...form, referencia: trap, elapsed: Date.now() - openedAt.current }),
             });
             if (!res.ok) throw new Error('send failed');
             setForm({ name: '', email: '', message: '' });
@@ -140,6 +143,12 @@ function ContactBody() {
                 ¿Tienes un proyecto o una vacante? Escríbeme y te respondo personalmente.
             </p>
             <form className="ficha-form" onSubmit={submit}>
+                <div className="ficha-trap" aria-hidden="true">
+                    <label>
+                        <span>No completes este campo</span>
+                        <input name="referencia" value={trap} onChange={(e) => setTrap(e.target.value)} tabIndex={-1} autoComplete="off" />
+                    </label>
+                </div>
                 <label>
                     <span>Nombre</span>
                     <input name="name" value={form.name} onChange={change} required autoComplete="name" />

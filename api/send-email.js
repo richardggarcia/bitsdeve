@@ -62,6 +62,32 @@ const createEmailHtml = ({ name, email, message }) => {
 };
 
 // ============================================
+// FILTRO ANTIBOTS
+// ============================================
+const MIN_ELAPSED_MS = 3000;
+const WINDOW_MS = 10 * 60 * 1000;
+const MAX_PER_IP = 3;
+
+// Memoria de la instancia: se pierde cuando la función se reinicia, así que
+// frena ráfagas pero no es un límite exacto.
+const seen = new Map();
+
+const isRepeated = (key, max) => {
+  const now = Date.now();
+  for (const [k, times] of seen) {
+    if (times[times.length - 1] < now - WINDOW_MS) seen.delete(k);
+  }
+  const times = (seen.get(key) || []).filter((t) => t > now - WINDOW_MS);
+  if (times.length >= max) {
+    seen.set(key, times);
+    return true;
+  }
+  times.push(now);
+  seen.set(key, times);
+  return false;
+};
+
+// ============================================
 // HANDLER PRINCIPAL DE LA FUNCIÓN SERVERLESS
 // ============================================
 export default async function handler(req, res) {
@@ -80,16 +106,32 @@ export default async function handler(req, res) {
     return res.status(405).json({ message: 'Method not allowed' });
   }
 
-  // Logs de desarrollo (opcional, comentar en producción)
-  console.log('🔑 API Key exists:', !!process.env.RESEND_API_KEY);
-  console.log('📝 Request body:', req.body);
-
   // Validar campos requeridos
-  const { name, email, message } = req.body;
+  const { name, email, message, referencia, elapsed } = req.body || {};
 
   if (!name || !email || !message) {
     return res.status(400).json({ error: 'Missing required fields' });
   }
+
+  // El formulario del sitio siempre manda cuánto tardó la persona en escribir.
+  // Un envío sin ese dato no salió del formulario actual.
+  if (typeof elapsed !== 'number' || !Number.isFinite(elapsed)) {
+    return res.status(400).json({ error: 'Invalid submission' });
+  }
+
+  // A los bots se les responde como si hubiera salido bien, para que no ajusten el envío.
+  const dropped = () => res.status(200).json({ success: true });
+
+  // Casilla trampa: las personas no la ven, los bots la rellenan.
+  if (referencia) return dropped();
+  // Nadie escribe nombre, correo y mensaje en menos de tres segundos.
+  if (elapsed < MIN_ELAPSED_MS) return dropped();
+
+  const ip = String(req.headers['x-forwarded-for'] || '').split(',')[0].trim() || 'desconocida';
+  if (isRepeated(`ip:${ip}`, MAX_PER_IP)) return dropped();
+  // El mismo mensaje del mismo remitente solo se entrega una vez.
+  const msgKey = `msg:${String(email).toLowerCase()}:${String(message).trim()}`;
+  if (isRepeated(msgKey, 1)) return dropped();
 
   try {
     // Llamar a la API de Resend
@@ -111,17 +153,20 @@ export default async function handler(req, res) {
     // Parsear respuesta JSON de Resend
     const result = await response.json();
 
-    console.log('📧 Resend response:', response.status, result);
+    console.log('Resend response:', response.status);
 
     if (response.ok) {
       res.status(200).json({ success: true, data: result });
     } else {
+      // Si no se entregó, la persona tiene que poder reintentar con el mismo texto.
+      seen.delete(msgKey);
       res.status(response.status).json({
         error: `Resend error: ${result.message || JSON.stringify(result)}`
       });
     }
   } catch (error) {
-    console.error('💥 Function error:', error);
+    seen.delete(msgKey);
+    console.error('Function error:', error);
     res.status(500).json({ error: error.message });
   }
 }
