@@ -369,6 +369,6 @@
 }
 
 /* En pantallas medianas el texto de presentación cae sobre la sala: le damos fondo. */
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) and (max-width: 1439px) {
   .hud-intro { padding: 18px 20px; background: rgba(255, 255, 255, 0.9); border: 1px solid var(--ink); left: 20px; bottom: 28px; }
 }

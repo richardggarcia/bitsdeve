@@ -46,9 +46,9 @@ function Rig({ active }: { active: string | null }) {
         const st = stations.find((s) => s.id === active);
 
         if (!st) {
-            const k = portrait ? 1.32 / aspect : Math.max(1.3, 2.2 / aspect);
+            const k = portrait ? 1.36 / aspect : Math.max(1.52, 2.5 / aspect);
             c.setLookAt(15 * k, 12.5 * k, 19.5 * k, 0, 0.6, -0.6, animate);
-            c.setFocalOffset(portrait ? 0 : -3.6 * k, portrait ? 3.4 * k : 1.6 * k, 0, animate);
+            c.setFocalOffset(portrait ? 0 : -2.5 * k, portrait ? 3.4 * k : 1.6 * k, 0, animate);
             return;
         }
         const d = (st.dist ?? 9) * (portrait ? 1.9 : 1.55);
